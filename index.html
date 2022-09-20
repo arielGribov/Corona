@@ -7,7 +7,7 @@
         <script src="./js/main.js" defer></script>
         <link rel="stylesheet" href="./styles/css/index.css" />
         <script src="https://kit.fontawesome.com/507a7da555.js" crossorigin="anonymous"></script>
-        <title>Document</title>
+        <title>קורונה - לוח בקרה</title>
     </head>
     <body>
         <header>
@@ -43,10 +43,10 @@
                     <div class="text update">עדכון אחרון: 18 בספטמבר 2022 | 08:13</div>
                 </div>
                 <div class="a-logo">
-                    <img src="./photos/a-sign.jpg" alt="" />
+                    <img src="./photos/a-sign.jpg" />
                 </div>
                 <div class="brightness-dark">
-                    <img src="./photos/brightness_dark.jpg" alt="" />
+                    <img src="./photos/brightness_dark.jpg" />
                 </div>
             </div>
             <div class="scroll-bar">
@@ -68,8 +68,8 @@
         <main>
             <div class="main-container">
                 <section class="look-over">
+                    <h2>מבט על</h2>
                     <div class="cards-container">
-                        <h2>מבט על</h2>
                         <div class="card">
                             <div class="card-title">
                                 <h3>מאומתים אתמול</h3>
@@ -220,7 +220,7 @@
                 </section>
                 <section class="central-measurements">
                     <h2>מדדים מרכזיים</h2>
-                    <div>
+                    <div class="cards-container">
                         <div class="card">
                             <div class="card-title">
                                 <h3>מספר מאושפזים – יומי</h3>
@@ -235,10 +235,13 @@
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu">
                                         <div class="share">
-                                            <i class="fa-light fa-share-nodes">שיתוף</i>
-                                            <i class="fa-light fa-arrow-down">הורדה</i>
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
                                         </div>
-                                        <div class="download"></div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -264,10 +267,13 @@
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu">
                                         <div class="share">
-                                            <i class="fa-light fa-share-nodes">שיתוף</i>
-                                            <i class="fa-light fa-arrow-down">הורדה</i>
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
                                         </div>
-                                        <div class="download"></div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -289,47 +295,688 @@
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu">
                                         <div class="share">
-                                            <i class="fa-light fa-share-nodes">שיתוף</i>
-                                            <i class="fa-light fa-arrow-down">הורדה</i>
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
                                         </div>
-                                        <div class="download"></div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-body">graph</div>
                         </div>
                     </div>
-                    <div></div>
+                    <div class="simulation-container">
+                        <div class="photo-container">
+                            <img src="./photos/satellite-photo.jpg" />
+                        </div>
+                        <div class="headline-container">
+                            <h1>הדמיית התפשטות הקורונה</h1>
+                            <p>התפשטות הקורונה החל מגל ראשון ועד פברואר 2022</p>
+                        </div>
+                    </div>
                 </section>
-                <section>
+                <section class="general-sickness-measurements">
                     <h2>מדדי תחלואה כללית</h2>
+                    <div class="cards-container">
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>אחוז תפוסת מיטות באישפוזים</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">
+                                        אריח זה מציג בכל יום את אחוז התפוסה היומית במחלקות פנימיות בכלל בתי החולים ואת
+                                        האחוז הממוצע של הנתון ב-7 הימים האחרונים בשנה קודמת עבור אותו יום . ניתן לבחור
+                                        בכלל המחלקות ובבית חולים מסוים. ניתן לבחור תצוגה עד למשך שנה .
+                                    </div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>תפוסת מיטות בביה"ח</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">
+                                        אחוז התפוסה הכללית ואחוז התפוסה במחלקות הפנימיות לפי בתי חולים. גרף אחוז התפוסה
+                                        לבית חולים צבוע באדום כאשר הנתון מגיע ל 100 ומעלה.
+                                    </div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">scroll bar search</div>
+                        </div>
+                    </div>
                 </section>
-                <section>
+                <section class="children-sickness">
                     <h2>תחלואה ואשפוזי ילדים</h2>
+                    <div class="cards-container">
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>מגמת ילדים מאומתים – ממוצע נע 7 ימים</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">
+                                        המספר היומי הממוצע ב-7 הימים האחרונים של מאומתים עד גיל 19 בחלוקה לפי 4 קבוצות
+                                        גיל: 4-0, 11-5, 12-15, 19-16. מאומתים - מי שנבדקו ונמצאו חיוביים לנגיף COVID-19
+                                        בבדיקת PCR או בבדיקת אנטיגן מפוקחת (החל מה 5.1.2022) , בין אם הופיעו אצלם
+                                        תסמינים ובין אם לא, בין אם הם חולים, החלימו או נפטרו.
+                                    </div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph very nice</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph very nice</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph very nice</div>
+                        </div>
+                    </div>
                 </section>
-                <section>
+                <section class="sickness-from-abroad">
                     <h2>תחלואה מחו"ל</h2>
+                    <div class="cards-container">
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph very nice</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph very nice</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">scroll bar search</div>
+                        </div>
+                    </div>
+                    <div class="links-container">
+                        <div class="link">
+                            <div class="img-container">
+                                <img src="./photos/world-in-three-colors.jpg" />
+                            </div>
+                            <div class="headline-container">
+                                <h2>תעופה בזמן קורונה</h2>
+                                <p>רמזור מדינות העולם לפי רמת סיכון</p>
+                                <a href="https://experience.arcgis.com/experience/23d35bf0ccbc40d1ad5b5af92b967c95">
+                                    experience.arcgis.com
+                                </a>
+                            </div>
+                        </div>
+                        <div class="link">
+                            <div class="img-container">
+                                <img src="./photos/world-in-red.png" />
+                            </div>
+                            <div class="headline-container">
+                                <h2>מאומתים לפי מדינות העולם</h2>
+                                <p>תמונת מצב בעולם, מספר מאומתים יומי לפי מדינות</p>
+                                <a
+                                    href="https://ourworldindata.org/explorers/coronavirus-data-explorer?zoomToSelection=true&time=2020-03-01..2021-11-27&facet=none&pickerSort=asc&pickerMetric=location&Metric=Confirmed+cases&Interval=7-day+rolling+average&Relative+to+Population=true&Align+outbreaks=false&country=USA~GBR~CAN~DEU~ITA~IND~ISR"
+                                >
+                                    ourworldindata.org
+                                </a>
+                            </div>
+                        </div>
+                        <div class="link">
+                            <div class="img-container">
+                                <img src="./photos/world-in-blue.jpg" />
+                            </div>
+                            <div class="headline-container">
+                                <h2>נתוני תחלואה בעולם Who</h2>
+                                <p>תמונת מצב בעולם מוצגת ע"י ארגון הבריאות העולמי</p>
+                                <a
+                                    href="https://secure-web.cisco.com/1ai0Q334xOqo_nvmSXtcklTL9V8NCXbMAgScNyZJaUkXhCMdxoOyv3L6kzV5X6VOp7Bwu2v_5TeC7UfDICfML6KTvQecXGshqBojP0KvIr8dB0r4dhwugrTKVa-jMEjt2z7BY9syOhQPL9gNhFzIf2yhD3QvxftpX8CNYN_TDUET2izueutk4Aiu9ckHcB15ebRgmLbXxbwftyXU4sVZyT5d0iUOpGG3i-Q1qQnDW1pl3wgwvJiX4RTlILrCSefwsONS7kOUkjRVSSfoBkAMxldVM3Ut3F8OzoHPHh1vpufxeqlX9bQyP9AWkiVNUGwKzZiY1pHyaIjqiPjlxL6DOR3D0rKX0W6PS39_ZjCacKikip3twdfddQi_fZEu9531CiDhl8OSB5gHZ1gU_q4L0G58ZqyH-2bjAjOPq4xFUkcRWeJAQIT19aWHON1Sde0z8UaCJ3tmx6Y29rewkZghahaUoyzeXTZa-dQu22-semZ26jRC_w_S-PiPDPMUcdO-44nUhoGL8IEDFO1Pj4v5zPA/https%3A%2F%2Fcovid19.who.int%2F"
+                                    >covid19.who.int
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </section>
                 <section>
                     <h2>השפעת התחסנות על התחלואה</h2>
+                    <div class="cards-container">
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph very nice</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph very nice</div>
+                        </div>
+                    </div>
                 </section>
                 <section>
                     <h2>חולים קשה ומאושפזים</h2>
+                    <div class="cards-container">
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph very nice</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph</div>
+                        </div>
+                    </div>
                 </section>
                 <section>
                     <h2>נפטרים</h2>
+                    <div class="cards-container">
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph very nice</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph</div>
+                        </div>
+                    </div>
                 </section>
                 <section>
                     <h2>בדיקות</h2>
+                    <div class="cards-container">
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph very nice</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph very nice</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph very nice</div>
+                        </div>
+                    </div>
+                    <div class="links-container">
+                        <div class="link">
+                            <div class="img-container">
+                                <img src="" />
+                            </div>
+                            <div class="headline-container">
+                                <h2></h2>
+                                <p></p>
+                                <a href=""> </a>
+                            </div>
+                        </div>
+                        <div class="link">
+                            <div class="img-container">
+                                <img src="" />
+                            </div>
+                            <div class="headline-container">
+                                <h2></h2>
+                                <p></p>
+                                <a href=""> </a>
+                            </div>
+                        </div>
+                        <div class="link">
+                            <div class="img-container">
+                                <img src="" />
+                            </div>
+                            <div class="headline-container">
+                                <h2></h2>
+                                <p></p>
+                                <a href=""> </a>
+                            </div>
+                        </div>
+                    </div>
                 </section>
-                <section>
+                <!-- <section>
                     <h2>תחקורים נוספים</h2>
-                </section>
+                </section> 
                 <section>
                     <h2>תחלואה חוזרת ומחלימים</h2>
-                </section>
+                </section>-->
                 <section>
                     <h2>התחסנות האוכלוסיה</h2>
+                    <div class="cards-container">
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph very nice</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph very nice</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph very nice</div>
+                        </div>
+                    </div>
                 </section>
                 <section>
                     <h2>רמזור בישובים</h2>

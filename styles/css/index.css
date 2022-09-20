@@ -8,5 +8,15 @@
   color: #222b45;
 }
 * i {
-  font-style: normal;
+  font-style: unset;
+}
+* img {
+  max-width: 400px;
+}
+* .info {
+  display: none;
+}
+* main {
+  width: 100vw;
+  background-color: #edf1f7;
 }

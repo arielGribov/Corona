@@ -7,6 +7,18 @@
         color: #222b45;
     }
     i {
-        font-style: normal;
+        font-style: unset;
+    }
+    img {
+        //temp - change me !!!!
+        max-width: 400px;
+    }
+    .info {
+        //temp - change me !!!!
+        display: none;
+    }
+    main {
+        width: 100vw;
+        background-color: #edf1f7;
     }
 }
