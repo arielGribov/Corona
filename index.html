@@ -12,12 +12,11 @@
     <body>
         <header>
             <div class="header-container">
-                <div class="hamburger-menu">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-                <div class="side-bar">
+                <button class="hamburger-menu">
+                    <i class="fa-solid fa-bars"></i>
+                    <i class="fa fa-xmark display-none"></i>
+                </button>
+                <div class="side-bar display-none">
                     <div class="content world">
                         עולמות תוכן
                         <div>קורונה</div>
@@ -39,30 +38,34 @@
                     <img src="./photos/logo_DAshboard-01.png" />
                 </div>
                 <div class="header-text">
-                    <div class="text headline">נגיף הקורונה בישראל - תמונת מצב כללית</div>
-                    <div class="text update">עדכון אחרון: 18 בספטמבר 2022 | 08:13</div>
+                    <b class="text-headline">נגיף הקורונה בישראל - תמונת מצב כללית</b>
+                    <span class="text-update">עדכון אחרון: 18 בספטמבר 2022 | 08:13</span>
                 </div>
-                <div class="a-logo">
-                    <img src="./photos/a-sign.jpg" />
-                </div>
-                <div class="brightness-dark">
-                    <img src="./photos/brightness_dark.jpg" />
+                <div class="side-buttons-container">
+                    <div class="a-logo">
+                        <img src="./photos/a-sign.jpg" />
+                    </div>
+                    <button class="brightness-dark">
+                        <img src="./photos/brightness_dark.jpg" />
+                    </button>
                 </div>
             </div>
             <div class="scroll-bar">
-                <div class="section">מבט על</div>
-                <div class="section">מדדים מרכזיים</div>
-                <div class="section">מדיי תחלואה כללית</div>
-                <div class="section">תחלואה ואשפוזי ילדים</div>
-                <div class="section">תחלואה מחו"ל</div>
-                <div class="section">השפעת התחסנות על התחלואה</div>
-                <div class="section">חולים קשה ומאושפזים</div>
-                <div class="section">נפטרים</div>
-                <div class="section">בדיקות</div>
-                <div class="section">תחקורים נוספים</div>
-                <div class="section">תחלואה חוזרת ומחלימים</div>
-                <div class="section">התחסנות האוכלוסיה</div>
-                <div class="section">רמזור בישובים</div>
+                <ul>
+                    <li>מבט על</li>
+                    <li>מדדים מרכזיים</li>
+                    <li>מדיי תחלואה כללית</li>
+                    <li>תחלואה ואשפוזי ילדים</li>
+                    <li>תחלואה מחו"ל</li>
+                    <li>השפעת התחסנות על התחלואה</li>
+                    <!-- <li>חולים קשה ומאושפזים</li>
+                    <li>נפטרים</li> -->
+                    <li>בדיקות</li>
+                    <!-- <li>תחקורים נוספים</li>
+                    <li>תחלואה חוזרת ומחלימים</li> -->
+                    <li>התחסנות האוכלוסיה</li>
+                    <li>רמזור בישובים</li>
+                </ul>
             </div>
         </header>
         <main>
@@ -474,7 +477,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph</div>
+                            <div class="card-body">graph very nice</div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -616,7 +619,7 @@
                         </div>
                     </div>
                 </section>
-                <section>
+                <section class="vaccination-influence">
                     <h2>השפעת התחסנות על התחלואה</h2>
                     <div class="cards-container">
                         <div class="card">
@@ -663,7 +666,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph</div>
+                            <div class="card-body">graph very nice</div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -690,7 +693,7 @@
                         </div>
                     </div>
                 </section>
-                <section>
+                <!-- <section>
                     <h2>חולים קשה ומאושפזים</h2>
                     <div class="cards-container">
                         <div class="card">
@@ -791,8 +794,8 @@
                             <div class="card-body">graph</div>
                         </div>
                     </div>
-                </section>
-                <section>
+                </section> -->
+                <section class="tests">
                     <h2>בדיקות</h2>
                     <div class="cards-container">
                         <div class="card">
@@ -867,33 +870,27 @@
                     </div>
                     <div class="links-container">
                         <div class="link">
-                            <div class="img-container">
-                                <img src="" />
-                            </div>
+                            <div class="img-container"><img src="" />very nice picture</div>
                             <div class="headline-container">
-                                <h2></h2>
-                                <p></p>
-                                <a href=""> </a>
+                                <h2>big nice headline</h2>
+                                <p>very nice paragrah</p>
+                                <a href="">some nice link</a>
                             </div>
                         </div>
                         <div class="link">
-                            <div class="img-container">
-                                <img src="" />
-                            </div>
+                            <div class="img-container"><img src="" />very nice picture</div>
                             <div class="headline-container">
-                                <h2></h2>
-                                <p></p>
-                                <a href=""> </a>
+                                <h2>big nice headline</h2>
+                                <p>very nice paragrah</p>
+                                <a href="">some nice link</a>
                             </div>
                         </div>
                         <div class="link">
-                            <div class="img-container">
-                                <img src="" />
-                            </div>
+                            <div class="img-container"><img src="" />very nice picture</div>
                             <div class="headline-container">
-                                <h2></h2>
-                                <p></p>
-                                <a href=""> </a>
+                                <h2>big nice headline</h2>
+                                <p>very nice paragrah</p>
+                                <a href="">some nice link</a>
                             </div>
                         </div>
                     </div>
@@ -904,7 +901,7 @@
                 <section>
                     <h2>תחלואה חוזרת ומחלימים</h2>
                 </section>-->
-                <section>
+                <section class="population-vaccination">
                     <h2>התחסנות האוכלוסיה</h2>
                     <div class="cards-container">
                         <div class="card">
@@ -976,10 +973,133 @@
                             </div>
                             <div class="card-body">graph very nice</div>
                         </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">scroll bar search</div>
+                        </div>
+                    </div>
+                    <div class="links-container">
+                        <div class="link">
+                            <div class="img-container"><img src="" />very nice picture</div>
+                            <div class="headline-container">
+                                <h2>big nice headline</h2>
+                                <p>very nice paragrah</p>
+                                <a href="">some nice link</a>
+                            </div>
+                        </div>
+                        <div class="link">
+                            <div class="img-container"><img src="" />very nice picture</div>
+                            <div class="headline-container">
+                                <h2>big nice headline</h2>
+                                <p>very nice paragrah</p>
+                                <a href="">some nice link</a>
+                            </div>
+                        </div>
+                        <div class="link">
+                            <div class="img-container"><img src="" />very nice picture</div>
+                            <div class="headline-container">
+                                <h2>big nice headline</h2>
+                                <p>very nice paragrah</p>
+                                <a href="">some nice link</a>
+                            </div>
+                        </div>
                     </div>
                 </section>
-                <section>
+                <section class="trafic-light">
                     <h2>רמזור בישובים</h2>
+                    <div class="cards-container">
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">scroll bar search</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <h3>big nice headline</h3>
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div class="info">some info very nice</div>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <div class="menu">
+                                        <div class="share">
+                                            <i class="fa fa-share-nodes"></i>
+                                            שיתוף
+                                        </div>
+                                        <div class="download">
+                                            <i class="fa fa-arrow-down"></i>
+                                            הורדה
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">graph very nice</div>
+                        </div>
+                    </div>
+                    <div class="links-container">
+                        <div class="link">
+                            <div class="img-container"><img src="" />very nice picture</div>
+                            <div class="headline-container">
+                                <h2>big nice headline</h2>
+                                <p>very nice paragrah</p>
+                                <a href="">some nice link</a>
+                            </div>
+                        </div>
+                        <div class="link">
+                            <div class="img-container"><img src="" />very nice picture</div>
+                            <div class="headline-container">
+                                <h2>big nice headline</h2>
+                                <p>very nice paragrah</p>
+                                <a href="">some nice link</a>
+                            </div>
+                        </div>
+                        <div class="link">
+                            <div class="img-container"><img src="" />very nice picture</div>
+                            <div class="headline-container">
+                                <h2>big nice headline</h2>
+                                <p>very nice paragrah</p>
+                                <a href="">some nice link</a>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </div>
         </main>

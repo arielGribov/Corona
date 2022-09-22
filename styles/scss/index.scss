@@ -3,22 +3,98 @@
     box-sizing: border-box;
     direction: rtl;
     font-family: 'Assistant', sans-serif;
-    .fa-circle-info {
-        color: #222b45;
+    margin: 0;
+    padding: 0;
+    .display-none {
+        display: none !important;
     }
     i {
         font-style: unset;
     }
-    img {
-        //temp - change me !!!!
-        max-width: 400px;
-    }
-    .info {
-        //temp - change me !!!!
-        display: none;
-    }
-    main {
-        width: 100vw;
-        background-color: #edf1f7;
+    body {
+        width: 100%;
+        header {
+            display: flex;
+            position: fixed;
+            flex-direction: column;
+            top: 0;
+            right: 0;
+            background-color: white;
+            white-space: nowrap;
+            .header-container {
+                display: flex;
+                flex-wrap: wrap;
+                position: relative;
+                justify-content: space-between;
+                align-items: center;
+                width: 100vw;
+                height: 100%;
+                max-height: 77px;
+                padding: 0px 32px;
+                z-index: 2000;
+                .hamburger-menu {
+                    width: 40px;
+                    height: 40px;
+                    font-size: 30px;
+                    color: #374f60;
+                    border: 0;
+                    background: none;
+                }
+                .logo-img {
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        max-width: 247px;
+                        max-height: 47px;
+                        margin: 0 30px;
+                    }
+                }
+                .header-text {
+                    .text-headline {
+                        border-inline-end: 1px solid currentColor;
+                        padding-inline-end: 20px;
+                        margin-inline-end: 20px;
+                        font-size: 1.01rem;
+                    }
+                    .text-update {
+                        font-size: 0.75rem;
+                        font-weight: 700;
+                    }
+                }
+                .side-buttons-container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .brightness-dark {
+                        border: 0;
+                        background: none;
+                    }
+                }
+            }
+            .scroll-bar {
+                display: flex;
+                background-color: #374f60;
+                color: white;
+                ul {
+                    display: flex;
+                    justify-content: space-evenly;
+                    li {
+                    }
+                }
+            }
+        }
+
+        main {
+            background-color: #edf1f7;
+            margin-top: 120px;
+        }
+        .fa-circle-info {
+            color: #222b45;
+        }
+        .info {
+            //temp - change me !!!!
+            display: none;
+        }
     }
 }
