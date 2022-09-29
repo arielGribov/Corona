@@ -6,6 +6,14 @@
   margin: 0;
   padding: 0;
 }
+* ::-webkit-scrollbar {
+  width: 7.5px;
+  height: 7.5px;
+}
+* ::-webkit-scrollbar-thumb {
+  background: rgb(159, 159, 159);
+  border-radius: 10px;
+}
 * .display-none {
   display: none !important;
 }
@@ -22,7 +30,7 @@
   top: 0;
   right: 0;
   background-color: white;
-  white-space: nowrap;
+  white-space: wrap;
 }
 * body header .header-container {
   display: flex;
@@ -31,18 +39,22 @@
   justify-content: space-between;
   align-items: center;
   width: 100vw;
-  height: 100%;
-  max-height: 77px;
+  height: 77px;
   padding: 0px 32px;
   z-index: 2000;
 }
-* body header .header-container .hamburger-menu {
+* body header .header-container .right-side-container {
+  display: flex;
+  align-items: center;
+}
+* body header .header-container .right-side-container .hamburger-menu {
   width: 40px;
   height: 40px;
   font-size: 30px;
   color: #374f60;
   border: 0;
   background: none;
+  cursor: pointer;
 }
 * body header .header-container .logo-img img {
   width: 100%;
@@ -50,6 +62,11 @@
   max-width: 247px;
   max-height: 47px;
   margin: 0 30px;
+}
+* body header .header-container .header-text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 * body header .header-container .header-text .text-headline {
   border-inline-end: 1px solid currentColor;
@@ -61,23 +78,53 @@
   font-size: 0.75rem;
   font-weight: 700;
 }
-* body header .header-container .side-buttons-container {
+* body header .side-buttons-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
-* body header .header-container .side-buttons-container .brightness-dark {
+* body header .side-buttons-container .brightness-dark {
   border: 0;
   background: none;
 }
-* body header .scroll-bar {
+* body header .side-bar {
+  z-index: 3000;
+  transition: 0.5s;
+}
+* body header .side-bar .nav-container {
   display: flex;
+}
+* body header .side-bar .nav-container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  list-style: none;
+}
+* body header .side-bar .nav-container ul li div {
+  white-space: nowrap;
+}
+* body header .scroll-bar {
   background-color: #374f60;
   color: white;
+  overflow: auto;
 }
 * body header .scroll-bar ul {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  list-style: none;
+  width: 100%;
+  height: 50px;
+  margin-right: 25px;
+  margin-left: 25px;
+}
+* body header .scroll-bar ul li {
+  width: fit-content;
+  cursor: pointer;
 }
 * body main {
   background-color: #edf1f7;

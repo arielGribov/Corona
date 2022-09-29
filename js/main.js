@@ -1,6 +1,6 @@
 const hamburgerButton = document.getElementsByClassName('fa-bars')[0];
 const closingButton = document.getElementsByClassName('fa-xmark')[0];
-const sideBar = document.getElementsByClassName('side-bar')[0];
+const sideBar = document.getElementsByClassName('nav-container')[0];
 
 hamburgerButton.onclick = () => {
     hamburgerButton.classList.add('display-none');
