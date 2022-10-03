@@ -117,7 +117,8 @@
   align-items: center;
   padding: 9px 0;
   list-style: none;
-  width: 100%;
+  width: calc(100vw - 25px);
+  gap: 4%;
   height: 50px;
   margin-right: 25px;
   margin-left: 25px;
@@ -125,14 +126,102 @@
 * body header .scroll-bar ul li {
   width: fit-content;
   cursor: pointer;
+  white-space: nowrap;
 }
 * body main {
+  display: flex;
   background-color: #edf1f7;
-  margin-top: 120px;
+  padding: 0.25rem 2.25rem 2.25rem;
+  margin-top: 135px;
 }
-* body .fa-circle-info {
+* body main .main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+* body main .main-container section {
+  display: flex;
+  flex-direction: column;
+}
+* body main .main-container section h2 {
+  font-size: 19px;
+  font-weight: 700;
+  text-align: start;
+  border-top: 1px solid rgba(161, 170, 177, 0.4);
+  margin-top: 15px;
+  margin-bottom: 0.5rem;
+}
+* body main .main-container section .first-h {
+  border-top: none;
+  margin-top: 0;
+}
+* body main .main-container section .cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-bottom: 1.3rem;
+  gap: 20px;
+}
+* body main .main-container section .cards-container .card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 3px 6px 14px 0 rgba(0, 0, 0, 0.1);
+  height: 184px;
+  width: calc(16.6666666667% - 20px);
+  padding: 16px;
+}
+* body main .main-container section .cards-container .card .card-title {
+  display: flex;
+  gap: 15px;
+}
+* body main .main-container section .cards-container .card .card-title h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+* body main .main-container section .cards-container .card .card-title div {
+  display: flex;
+  flex-direction: column;
+}
+* body main .main-container section .cards-container .card .card-title div .fa-circle-info {
   color: #222b45;
 }
-* body .info {
-  display: none;
+* body main .main-container section .cards-container .card .card-title div .info {
+  background: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #b3b3b5;
+  font-size: 0.9rem;
+  box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.16);
+  display: inline;
+  animation: fade 0.25s;
+  position: absolute;
+  z-index: 99;
+  transform: translateY(24px);
+  width: 140px;
+}
+* body main .main-container section .cards-container .card .card-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+* body main .main-container section .last-7-days {
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 0 20px;
+  box-shadow: 3px 6px 14px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: visible;
+}
+* body main .main-container section .last-7-days .cards-container {
+  margin-top: 10px;
+}
+* body main .main-container section .last-7-days .cards-container .card {
+  width: calc(25% - 20px);
+}
+* body main .main-container section .simulation-container {
+  display: flex;
+  flex-wrap: wrap;
 }

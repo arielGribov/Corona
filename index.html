@@ -77,14 +77,14 @@
         <main>
             <div class="main-container">
                 <section class="look-over">
-                    <h2>מבט על</h2>
+                    <h2 class="first-h">מבט על</h2>
                     <div class="cards-container">
                         <div class="card">
                             <div class="card-title">
                                 <h3>מאומתים אתמול</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">
+                                    <div class="info display-none">
                                         מספר המאומתים לנגיף COVID-19 שאותרו משעה 00:00 עד שעה 23:59 של יום אתמול. סה"כ:
                                         מספר המאומתים מפרוץ המגיפה, כולל מי שהתגלו כמאומתים לנגיף שוב. מאומתים - מי
                                         שנבדקו ונמצאו חיוביים לנגיף COVID-19 בבדיקת PCR או בבדיקת אנטיגן מפוקחת (החל מה
@@ -103,7 +103,7 @@
                                 <h3>חולים קשה</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">
+                                    <div class="info display-none">
                                         מספר החולים במצב קשה וקריטי המאושפזים בבתי החולים. חולה קשה - מי שחולה במחלת
                                         נגיף COVID-19 ושהוגדר במצב קשה או קריטי על ידי מערכת הבריאות.
                                     </div>
@@ -116,7 +116,7 @@
                                 <h3>מתחסנים</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">
+                                    <div class="info display-none">
                                         מספר מקבלי החיסון מפני נגיף COVID-19 מתחילת מבצע החיסונים לפי מספרי המנות.
                                     </div>
                                 </div>
@@ -128,7 +128,7 @@
                                 <h3>נפטרים מצטבר</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">
+                                    <div class="info display-none">
                                         מספר הנפטרים המצטבר ממחלת הנגיף COVID-19 החל מפרוץ המגפה. נתוני הנפטרים מתעדכנים
                                         לאחר שנבדקו תעודות הפטירה לוידוא סיבת המוות ולכן ייתכנו עדכונים מאוחרים של מספר
                                         הנפטרים.
@@ -142,7 +142,7 @@
                                 <h3>אחוז נבדקים חיוביים אתמול</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">
+                                    <div class="info display-none">
                                         אחוז הנבדקים שנמצאו חיוביים לנגיף COVID-19 מתוך מספר נבדקים לגילוי הנגיף אתמול.
                                         נבדקים לגילוי הנגיף אתמול - מספר הנבדקים לאיתור ראשוני של הנגיף (ללא בדיקות
                                         נלוות לקביעת החלמה) בבדיקות PCR או אנטיגן מפוקחות, שהתבצעו ותוצאותיהן התקבלו
@@ -159,7 +159,7 @@
                                 <h3>מקדם הדבקה</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">
+                                    <div class="info display-none">
                                         מקדם הדבקה R - המספר הממוצע של אנשים שידבקו מאדם שנושא את הנגיף COVID-19. כשהערך
                                         של R גבוה מ-1 - המחלה מתפשטת, כלומר מספר הנדבקים גדל.
                                     </div>
@@ -170,60 +170,62 @@
                     </div>
                     <div class="last-7-days">
                         <h3>סיכום 7 ימים אחרונים</h3>
-                        <div class="card">
-                            <div class="card-title">
-                                <h3>מספר המאומתים</h3>
-                                <div>
-                                    <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">
-                                        מספר המאומתים לנגיף COVID-19 שאותרו ב-7 הימים האחרונים (לא כולל את יום העדכון)
-                                        והשינוי באחוזים לעומת 7 הימים הקודמים.
+                        <div class="cards-container">
+                            <div class="card">
+                                <div class="card-title">
+                                    <h3>מספר המאומתים</h3>
+                                    <div>
+                                        <i class="fa-solid fa-circle-info"></i>
+                                        <div class="info display-none">
+                                            מספר המאומתים לנגיף COVID-19 שאותרו ב-7 הימים האחרונים (לא כולל את יום
+                                            העדכון) והשינוי באחוזים לעומת 7 הימים הקודמים.
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card-body">data</div>
-                        </div>
-                        <div class="card">
-                            <div class="card-title">
-                                <h3>מספר החולים קשה</h3>
-                                <div>
-                                    <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">
-                                        מספר החולים החדשים במצב קשה וקריטי במחלת נגיף COVID-19 ב-7 הימים האחרונים (לא
-                                        כולל את יום העדכון) והשינוי באחוזים לעומת 7 הימים הקודמים.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">data</div>
-                        </div>
-                        <div class="card">
-                            <div class="card-title">
-                                <h3>מספר הנפטרים</h3>
-                                <div>
-                                    <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">
-                                        מספר הנפטרים מנגיף COVID-19 ב-7 הימים האחרונים (לא כולל את יום העדכון) והשינוי
-                                        באחוזים לעומת 7 הימים הקודמים.
-                                    </div>
-                                </div>
-
                                 <div class="card-body">data</div>
                             </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-title">
-                                <h3>מספר נבדקים</h3>
-                                <div>
-                                    <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">
-                                        מספר הנבדקים בבדיקות לגילוי נגיף COVID-19 מסוג PCR או אנטיגן ב-7 הימים האחרונים
-                                        (לא כולל את יום העדכון) והשינוי באחוזים לעומת 7 הימים הקודמים. הנתון אינו כולל
-                                        נבדקים בבדיקות נלוות לקביעת החלמה. נבדקים חיוביים - אחוז הנבדקים שנמצאו חיוביים
-                                        לנגיף COVID-19 מתוך מספר הנבדקים לגילוי הנגיף ב 7 הימים האחרונים.
+                            <div class="card">
+                                <div class="card-title">
+                                    <h3>מספר החולים קשה</h3>
+                                    <div>
+                                        <i class="fa-solid fa-circle-info"></i>
+                                        <div class="info display-none">
+                                            מספר החולים החדשים במצב קשה וקריטי במחלת נגיף COVID-19 ב-7 הימים האחרונים
+                                            (לא כולל את יום העדכון) והשינוי באחוזים לעומת 7 הימים הקודמים.
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="card-body">data</div>
                             </div>
-                            <div class="card-body">data</div>
+                            <div class="card">
+                                <div class="card-title">
+                                    <h3>מספר הנפטרים</h3>
+                                    <div>
+                                        <i class="fa-solid fa-circle-info"></i>
+                                        <div class="info display-none">
+                                            מספר הנפטרים מנגיף COVID-19 ב-7 הימים האחרונים (לא כולל את יום העדכון)
+                                            והשינוי באחוזים לעומת 7 הימים הקודמים.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">data</div>
+                            </div>
+                            <div class="card">
+                                <div class="card-title">
+                                    <h3>מספר נבדקים</h3>
+                                    <div>
+                                        <i class="fa-solid fa-circle-info"></i>
+                                        <div class="info display-none">
+                                            מספר הנבדקים בבדיקות לגילוי נגיף COVID-19 מסוג PCR או אנטיגן ב-7 הימים
+                                            האחרונים (לא כולל את יום העדכון) והשינוי באחוזים לעומת 7 הימים הקודמים.
+                                            הנתון אינו כולל נבדקים בבדיקות נלוות לקביעת החלמה. נבדקים חיוביים - אחוז
+                                            הנבדקים שנמצאו חיוביים לנגיף COVID-19 מתוך מספר הנבדקים לגילוי הנגיף ב 7
+                                            הימים האחרונים.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">data</div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -235,14 +237,14 @@
                                 <h3>מספר מאושפזים – יומי</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">
+                                    <div class="info display-none">
                                         מספר החולים היומי במחלת נגיף COVID-19 המאושפזים בבתי חולים בחלוקה לפי מצב רפואי
                                         : קשה (כולל קריטי), בינוני וקל.
                                     </div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -261,7 +263,7 @@
                                 <h3>מקדם ההדבקה R</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">
+                                    <div class="info display-none">
                                         מקדם הדבקה R - המספר הממוצע של אנשים שידבקו מאדם שנושא את הנגיף COVID-19. כשהערך
                                         של R גבוה מ-1 - המחלה מתפשטת, כלומר מספר הנדבקים גדל. מקדם ההדבקה R מחושב בכל
                                         יום. 10 הימים בהם לא מוצג ערך ל-R מבטאים זמן השהייה ממוצע מרגע ההדבקה עד אימות
@@ -274,7 +276,7 @@
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -293,7 +295,7 @@
                                 <h3>מאומתים חדשים יומי</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">
+                                    <div class="info display-none">
                                         המספר היומי של נדבקים בנגיף COVID-19 והממוצע נע ב 7 ימים. מאומתים - מי שנבדקו
                                         ונמצאו חיוביים לנגיף COVID-19 בבדיקת PCR או בבדיקת אנטיגן מפוקחת (החל מה
                                         5.1.2022) , בין אם הופיעו אצלם תסמינים ובין אם לא, בין אם הם חולים, החלימו או
@@ -302,7 +304,7 @@
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -319,7 +321,7 @@
                     </div>
                     <div class="simulation-container">
                         <div class="photo-container">
-                            <img src="./photos/satellite-photo.jpg" />
+                            <img src="https://tinyurl.com/36yu2peh" />
                         </div>
                         <div class="headline-container">
                             <h1>הדמיית התפשטות הקורונה</h1>
@@ -335,7 +337,7 @@
                                 <h3>אחוז תפוסת מיטות באישפוזים</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">
+                                    <div class="info display-none">
                                         אריח זה מציג בכל יום את אחוז התפוסה היומית במחלקות פנימיות בכלל בתי החולים ואת
                                         האחוז הממוצע של הנתון ב-7 הימים האחרונים בשנה קודמת עבור אותו יום . ניתן לבחור
                                         בכלל המחלקות ובבית חולים מסוים. ניתן לבחור תצוגה עד למשך שנה .
@@ -343,7 +345,7 @@
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -362,14 +364,14 @@
                                 <h3>תפוסת מיטות בביה"ח</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">
+                                    <div class="info display-none">
                                         אחוז התפוסה הכללית ואחוז התפוסה במחלקות הפנימיות לפי בתי חולים. גרף אחוז התפוסה
                                         לבית חולים צבוע באדום כאשר הנתון מגיע ל 100 ומעלה.
                                     </div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -393,7 +395,7 @@
                                 <h3>מגמת ילדים מאומתים – ממוצע נע 7 ימים</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">
+                                    <div class="info display-none">
                                         המספר היומי הממוצע ב-7 הימים האחרונים של מאומתים עד גיל 19 בחלוקה לפי 4 קבוצות
                                         גיל: 4-0, 11-5, 12-15, 19-16. מאומתים - מי שנבדקו ונמצאו חיוביים לנגיף COVID-19
                                         בבדיקת PCR או בבדיקת אנטיגן מפוקחת (החל מה 5.1.2022) , בין אם הופיעו אצלם
@@ -402,7 +404,7 @@
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -421,11 +423,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -444,11 +446,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -467,11 +469,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -490,11 +492,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -518,11 +520,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -541,11 +543,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -564,11 +566,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -591,9 +593,7 @@
                             <div class="headline-container">
                                 <h2>תעופה בזמן קורונה</h2>
                                 <p>רמזור מדינות העולם לפי רמת סיכון</p>
-                                <a href="https://experience.arcgis.com/experience/23d35bf0ccbc40d1ad5b5af92b967c95">
-                                    experience.arcgis.com
-                                </a>
+                                <a href="https://tinyurl.com/w6hvsdwy"> experience.arcgis.com </a>
                             </div>
                         </div>
                         <div class="link">
@@ -603,11 +603,7 @@
                             <div class="headline-container">
                                 <h2>מאומתים לפי מדינות העולם</h2>
                                 <p>תמונת מצב בעולם, מספר מאומתים יומי לפי מדינות</p>
-                                <a
-                                    href="https://ourworldindata.org/explorers/coronavirus-data-explorer?zoomToSelection=true&time=2020-03-01..2021-11-27&facet=none&pickerSort=asc&pickerMetric=location&Metric=Confirmed+cases&Interval=7-day+rolling+average&Relative+to+Population=true&Align+outbreaks=false&country=USA~GBR~CAN~DEU~ITA~IND~ISR"
-                                >
-                                    ourworldindata.org
-                                </a>
+                                <a href="https://tinyurl.com/2a6446pr"> ourworldindata.org </a>
                             </div>
                         </div>
                         <div class="link">
@@ -617,10 +613,7 @@
                             <div class="headline-container">
                                 <h2>נתוני תחלואה בעולם Who</h2>
                                 <p>תמונת מצב בעולם מוצגת ע"י ארגון הבריאות העולמי</p>
-                                <a
-                                    href="https://secure-web.cisco.com/1ai0Q334xOqo_nvmSXtcklTL9V8NCXbMAgScNyZJaUkXhCMdxoOyv3L6kzV5X6VOp7Bwu2v_5TeC7UfDICfML6KTvQecXGshqBojP0KvIr8dB0r4dhwugrTKVa-jMEjt2z7BY9syOhQPL9gNhFzIf2yhD3QvxftpX8CNYN_TDUET2izueutk4Aiu9ckHcB15ebRgmLbXxbwftyXU4sVZyT5d0iUOpGG3i-Q1qQnDW1pl3wgwvJiX4RTlILrCSefwsONS7kOUkjRVSSfoBkAMxldVM3Ut3F8OzoHPHh1vpufxeqlX9bQyP9AWkiVNUGwKzZiY1pHyaIjqiPjlxL6DOR3D0rKX0W6PS39_ZjCacKikip3twdfddQi_fZEu9531CiDhl8OSB5gHZ1gU_q4L0G58ZqyH-2bjAjOPq4xFUkcRWeJAQIT19aWHON1Sde0z8UaCJ3tmx6Y29rewkZghahaUoyzeXTZa-dQu22-semZ26jRC_w_S-PiPDPMUcdO-44nUhoGL8IEDFO1Pj4v5zPA/https%3A%2F%2Fcovid19.who.int%2F"
-                                    >covid19.who.int
-                                </a>
+                                <a href="https://tinyurl.com/36umbdpx">covid19.who.int </a>
                             </div>
                         </div>
                     </div>
@@ -633,11 +626,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -656,11 +649,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -679,11 +672,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -707,11 +700,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -730,11 +723,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -758,11 +751,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -781,11 +774,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -809,11 +802,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -832,11 +825,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -855,11 +848,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -915,11 +908,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -938,11 +931,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -961,11 +954,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -984,11 +977,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -1038,11 +1031,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
@@ -1061,11 +1054,11 @@
                                 <h3>big nice headline</h3>
                                 <div>
                                     <i class="fa-solid fa-circle-info"></i>
-                                    <div class="info">some info very nice</div>
+                                    <div class="info display-none">some info very nice</div>
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    <div class="menu">
+                                    <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
                                             שיתוף
