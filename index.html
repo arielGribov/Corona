@@ -4,7 +4,9 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <script src="./node_modules/echarts/dist/echarts.js"></script> -->
         <script src="./js/main.js" defer></script>
+        <script src="./js/charts.js" type="module" defer></script>
         <link rel="stylesheet" href="./styles/css/index.css" />
         <script src="https://kit.fontawesome.com/507a7da555.js" crossorigin="anonymous"></script>
         <title>קורונה - לוח בקרה</title>
@@ -64,25 +66,25 @@
                     <li>תחלואה ואשפוזי ילדים</li>
                     <li>תחלואה מחו"ל</li>
                     <li>השפעת התחסנות על התחלואה</li>
-                    <!-- <li>חולים קשה ומאושפזים</li>
-                    <li>נפטרים</li> -->
+                    <li>חולים קשה ומאושפזים</li>
+                    <li>נפטרים</li>
                     <li>בדיקות</li>
-                    <!-- <li>תחקורים נוספים</li>
-                    <li>תחלואה חוזרת ומחלימים</li> -->
+                    <li>תחקורים נוספים</li>
+                    <li>תחלואה חוזרת ומחלימים</li>
                     <li>התחסנות האוכלוסיה</li>
                     <li>רמזור בישובים</li>
                 </ul>
             </div>
         </header>
-        <main>
+        <main id="main">
             <div class="main-container">
                 <section class="look-over">
                     <h2 class="first-h">מבט על</h2>
                     <div class="cards-container">
                         <div class="card">
                             <div class="card-title">
-                                <h3>מאומתים אתמול</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>מאומתים אתמול</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">
                                         מספר המאומתים לנגיף COVID-19 שאותרו משעה 00:00 עד שעה 23:59 של יום אתמול. סה"כ:
@@ -100,8 +102,8 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>חולים קשה</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>חולים קשה</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">
                                         מספר החולים במצב קשה וקריטי המאושפזים בבתי החולים. חולה קשה - מי שחולה במחלת
@@ -113,8 +115,8 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>מתחסנים</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>מתחסנים</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">
                                         מספר מקבלי החיסון מפני נגיף COVID-19 מתחילת מבצע החיסונים לפי מספרי המנות.
@@ -125,8 +127,8 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>נפטרים מצטבר</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>נפטרים מצטבר</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">
                                         מספר הנפטרים המצטבר ממחלת הנגיף COVID-19 החל מפרוץ המגפה. נתוני הנפטרים מתעדכנים
@@ -139,8 +141,8 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>אחוז נבדקים חיוביים אתמול</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>אחוז נבדקים חיוביים אתמול</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">
                                         אחוז הנבדקים שנמצאו חיוביים לנגיף COVID-19 מתוך מספר נבדקים לגילוי הנגיף אתמול.
@@ -156,8 +158,8 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>מקדם הדבקה</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>מקדם הדבקה</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">
                                         מקדם הדבקה R - המספר הממוצע של אנשים שידבקו מאדם שנושא את הנגיף COVID-19. כשהערך
@@ -173,8 +175,8 @@
                         <div class="cards-container">
                             <div class="card">
                                 <div class="card-title">
-                                    <h3>מספר המאומתים</h3>
-                                    <div>
+                                    <div class="right-side-div">
+                                        <h3>מספר המאומתים</h3>
                                         <i class="fa-solid fa-circle-info"></i>
                                         <div class="info display-none">
                                             מספר המאומתים לנגיף COVID-19 שאותרו ב-7 הימים האחרונים (לא כולל את יום
@@ -186,8 +188,8 @@
                             </div>
                             <div class="card">
                                 <div class="card-title">
-                                    <h3>מספר החולים קשה</h3>
-                                    <div>
+                                    <div class="right-side-div">
+                                        <h3>מספר החולים קשה</h3>
                                         <i class="fa-solid fa-circle-info"></i>
                                         <div class="info display-none">
                                             מספר החולים החדשים במצב קשה וקריטי במחלת נגיף COVID-19 ב-7 הימים האחרונים
@@ -199,8 +201,8 @@
                             </div>
                             <div class="card">
                                 <div class="card-title">
-                                    <h3>מספר הנפטרים</h3>
-                                    <div>
+                                    <div class="right-side-div">
+                                        <h3>מספר הנפטרים</h3>
                                         <i class="fa-solid fa-circle-info"></i>
                                         <div class="info display-none">
                                             מספר הנפטרים מנגיף COVID-19 ב-7 הימים האחרונים (לא כולל את יום העדכון)
@@ -212,8 +214,8 @@
                             </div>
                             <div class="card">
                                 <div class="card-title">
-                                    <h3>מספר נבדקים</h3>
-                                    <div>
+                                    <div class="right-side-div">
+                                        <h3>מספר נבדקים</h3>
                                         <i class="fa-solid fa-circle-info"></i>
                                         <div class="info display-none">
                                             מספר הנבדקים בבדיקות לגילוי נגיף COVID-19 מסוג PCR או אנטיגן ב-7 הימים
@@ -234,15 +236,15 @@
                     <div class="cards-container">
                         <div class="card">
                             <div class="card-title">
-                                <h3>מספר מאושפזים – יומי</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>מספר מאושפזים – יומי</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">
                                         מספר החולים היומי במחלת נגיף COVID-19 המאושפזים בבתי חולים בחלוקה לפי מצב רפואי
                                         : קשה (כולל קריטי), בינוני וקל.
                                     </div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -260,8 +262,8 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>מקדם ההדבקה R</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>מקדם ההדבקה R</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">
                                         מקדם הדבקה R - המספר הממוצע של אנשים שידבקו מאדם שנושא את הנגיף COVID-19. כשהערך
@@ -274,7 +276,7 @@
                                         "חישוב מקדם ההדבקה R" של מרכז המידע והידע הלאומי למערכה בקורונה.
                                     </div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -292,8 +294,8 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>מאומתים חדשים יומי</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>מאומתים חדשים יומי</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">
                                         המספר היומי של נדבקים בנגיף COVID-19 והממוצע נע ב 7 ימים. מאומתים - מי שנבדקו
@@ -302,7 +304,7 @@
                                         נפטרו.
                                     </div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -334,8 +336,8 @@
                     <div class="cards-container">
                         <div class="card">
                             <div class="card-title">
-                                <h3>אחוז תפוסת מיטות באישפוזים</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>אחוז תפוסת מיטות באישפוזים</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">
                                         אריח זה מציג בכל יום את אחוז התפוסה היומית במחלקות פנימיות בכלל בתי החולים ואת
@@ -343,7 +345,7 @@
                                         בכלל המחלקות ובבית חולים מסוים. ניתן לבחור תצוגה עד למשך שנה .
                                     </div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -361,15 +363,15 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>תפוסת מיטות בביה"ח</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>תפוסת מיטות בביה"ח</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">
                                         אחוז התפוסה הכללית ואחוז התפוסה במחלקות הפנימיות לפי בתי חולים. גרף אחוז התפוסה
                                         לבית חולים צבוע באדום כאשר הנתון מגיע ל 100 ומעלה.
                                     </div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -392,8 +394,8 @@
                     <div class="cards-container">
                         <div class="card">
                             <div class="card-title">
-                                <h3>מגמת ילדים מאומתים – ממוצע נע 7 ימים</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>מגמת ילדים מאומתים – ממוצע נע 7 ימים</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">
                                         המספר היומי הממוצע ב-7 הימים האחרונים של מאומתים עד גיל 19 בחלוקה לפי 4 קבוצות
@@ -402,7 +404,7 @@
                                         תסמינים ובין אם לא, בין אם הם חולים, החלימו או נפטרו.
                                     </div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -420,12 +422,12 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -443,12 +445,12 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -466,12 +468,12 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -489,12 +491,12 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -517,12 +519,12 @@
                     <div class="cards-container">
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -540,12 +542,12 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -563,12 +565,12 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -586,34 +588,42 @@
                         </div>
                     </div>
                     <div class="links-container">
-                        <div class="link">
-                            <div class="img-container">
-                                <img src="./photos/world-in-three-colors.jpg" />
+                        <div class="cards-container">
+                            <div class="card">
+                                <div class="link">
+                                    <div class="img-container">
+                                        <img src="./photos/world-in-three-colors.jpg" />
+                                    </div>
+                                    <div class="headline-container">
+                                        <h2>תעופה בזמן קורונה</h2>
+                                        <p>רמזור מדינות העולם לפי רמת סיכון</p>
+                                        <a href="https://tinyurl.com/w6hvsdwy"> experience.arcgis.com </a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="headline-container">
-                                <h2>תעופה בזמן קורונה</h2>
-                                <p>רמזור מדינות העולם לפי רמת סיכון</p>
-                                <a href="https://tinyurl.com/w6hvsdwy"> experience.arcgis.com </a>
+                            <div class="card">
+                                <div class="link">
+                                    <div class="img-container">
+                                        <img src="./photos/world-in-red.png" />
+                                    </div>
+                                    <div class="headline-container">
+                                        <h2>מאומתים לפי מדינות העולם</h2>
+                                        <p>תמונת מצב בעולם, מספר מאומתים יומי לפי מדינות</p>
+                                        <a href="https://tinyurl.com/2a6446pr"> ourworldindata.org </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="link">
-                            <div class="img-container">
-                                <img src="./photos/world-in-red.png" />
-                            </div>
-                            <div class="headline-container">
-                                <h2>מאומתים לפי מדינות העולם</h2>
-                                <p>תמונת מצב בעולם, מספר מאומתים יומי לפי מדינות</p>
-                                <a href="https://tinyurl.com/2a6446pr"> ourworldindata.org </a>
-                            </div>
-                        </div>
-                        <div class="link">
-                            <div class="img-container">
-                                <img src="./photos/world-in-blue.jpg" />
-                            </div>
-                            <div class="headline-container">
-                                <h2>נתוני תחלואה בעולם Who</h2>
-                                <p>תמונת מצב בעולם מוצגת ע"י ארגון הבריאות העולמי</p>
-                                <a href="https://tinyurl.com/36umbdpx">covid19.who.int </a>
+                            <div class="card">
+                                <div class="link">
+                                    <div class="img-container">
+                                        <img src="./photos/world-in-blue.jpg" />
+                                    </div>
+                                    <div class="headline-container">
+                                        <h2>נתוני תחלואה בעולם Who</h2>
+                                        <p>תמונת מצב בעולם מוצגת ע"י ארגון הבריאות העולמי</p>
+                                        <a href="https://tinyurl.com/36umbdpx">covid19.who.int </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -623,12 +633,12 @@
                     <div class="cards-container">
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -646,12 +656,12 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -669,12 +679,12 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -697,13 +707,12 @@
                     <div class="cards-container">
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                               <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
-                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                               <div class="left-side-div">                                    <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
@@ -720,13 +729,12 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                               <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
-                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                               <div class="left-side-div">                                    <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
@@ -748,13 +756,12 @@
                     <div class="cards-container">
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                               <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
-                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                               <div class="left-side-div">                                    <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
@@ -771,13 +778,12 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                               <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
-                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                               <div class="left-side-div">                                    <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
                                             <i class="fa fa-share-nodes"></i>
@@ -793,18 +799,18 @@
                             <div class="card-body">graph</div>
                         </div>
                     </div>
-                </section> -->
+                </section>    -->
                 <section class="tests">
                     <h2>בדיקות</h2>
                     <div class="cards-container">
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -822,12 +828,12 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -845,12 +851,12 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -868,28 +874,42 @@
                         </div>
                     </div>
                     <div class="links-container">
-                        <div class="link">
-                            <div class="img-container"><img src="" />very nice picture</div>
-                            <div class="headline-container">
-                                <h2>big nice headline</h2>
-                                <p>very nice paragrah</p>
-                                <a href="">some nice link</a>
+                        <div class="cards-container">
+                            <div class="card">
+                                <div class="link">
+                                    <div class="img-container">
+                                        <img src="./photos/nice-pic.jpg" very nice picture />
+                                    </div>
+                                    <div class="headline-container">
+                                        <h2>big nice headline</h2>
+                                        <p>very nice paragrah</p>
+                                        <a href="">some nice link</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="link">
-                            <div class="img-container"><img src="" />very nice picture</div>
-                            <div class="headline-container">
-                                <h2>big nice headline</h2>
-                                <p>very nice paragrah</p>
-                                <a href="">some nice link</a>
+                            <div class="card">
+                                <div class="link">
+                                    <div class="img-container">
+                                        <img src="./photos/nice-pic.jpg" very nice picture />
+                                    </div>
+                                    <div class="headline-container">
+                                        <h2>big nice headline</h2>
+                                        <p>very nice paragrah</p>
+                                        <a href="">some nice link</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="link">
-                            <div class="img-container"><img src="" />very nice picture</div>
-                            <div class="headline-container">
-                                <h2>big nice headline</h2>
-                                <p>very nice paragrah</p>
-                                <a href="">some nice link</a>
+                            <div class="card">
+                                <div class="link">
+                                    <div class="img-container">
+                                        <img src="./photos/nice-pic.jpg" very nice picture />
+                                    </div>
+                                    <div class="headline-container">
+                                        <h2>big nice headline</h2>
+                                        <p>very nice paragrah</p>
+                                        <a href="">some nice link</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -905,12 +925,12 @@
                     <div class="cards-container">
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -928,12 +948,12 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -951,12 +971,12 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -974,12 +994,12 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -997,28 +1017,42 @@
                         </div>
                     </div>
                     <div class="links-container">
-                        <div class="link">
-                            <div class="img-container"><img src="" />very nice picture</div>
-                            <div class="headline-container">
-                                <h2>big nice headline</h2>
-                                <p>very nice paragrah</p>
-                                <a href="">some nice link</a>
+                        <div class="cards-container">
+                            <div class="card">
+                                <div class="link">
+                                    <div class="img-container">
+                                        <img src="./photos/nice-pic.jpg" very nice picture />
+                                    </div>
+                                    <div class="headline-container">
+                                        <h2>big nice headline</h2>
+                                        <p>very nice paragrah</p>
+                                        <a href="">some nice link</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="link">
-                            <div class="img-container"><img src="" />very nice picture</div>
-                            <div class="headline-container">
-                                <h2>big nice headline</h2>
-                                <p>very nice paragrah</p>
-                                <a href="">some nice link</a>
+                            <div class="card">
+                                <div class="link">
+                                    <div class="img-container">
+                                        <img src="./photos/nice-pic.jpg" very nice picture />
+                                    </div>
+                                    <div class="headline-container">
+                                        <h2>big nice headline</h2>
+                                        <p>very nice paragrah</p>
+                                        <a href="">some nice link</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="link">
-                            <div class="img-container"><img src="" />very nice picture</div>
-                            <div class="headline-container">
-                                <h2>big nice headline</h2>
-                                <p>very nice paragrah</p>
-                                <a href="">some nice link</a>
+                            <div class="card">
+                                <div class="link">
+                                    <div class="img-container">
+                                        <img src="./photos/nice-pic.jpg" very nice picture />
+                                    </div>
+                                    <div class="headline-container">
+                                        <h2>big nice headline</h2>
+                                        <p>very nice paragrah</p>
+                                        <a href="">some nice link</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1028,12 +1062,12 @@
                     <div class="cards-container">
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -1051,12 +1085,12 @@
                         </div>
                         <div class="card">
                             <div class="card-title">
-                                <h3>big nice headline</h3>
-                                <div>
+                                <div class="right-side-div">
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
-                                <div>
+                                <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
                                         <div class="share">
@@ -1074,28 +1108,42 @@
                         </div>
                     </div>
                     <div class="links-container">
-                        <div class="link">
-                            <div class="img-container"><img src="" />very nice picture</div>
-                            <div class="headline-container">
-                                <h2>big nice headline</h2>
-                                <p>very nice paragrah</p>
-                                <a href="">some nice link</a>
+                        <div class="cards-container">
+                            <div class="card">
+                                <div class="link">
+                                    <div class="img-container">
+                                        <img src="./photos/nice-pic.jpg" very nice picture />
+                                    </div>
+                                    <div class="headline-container">
+                                        <h2>big nice headline</h2>
+                                        <p>very nice paragrah</p>
+                                        <a href="">some nice link</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="link">
-                            <div class="img-container"><img src="" />very nice picture</div>
-                            <div class="headline-container">
-                                <h2>big nice headline</h2>
-                                <p>very nice paragrah</p>
-                                <a href="">some nice link</a>
+                            <div class="card">
+                                <div class="link">
+                                    <div class="img-container">
+                                        <img src="./photos/nice-pic.jpg" very nice picture />
+                                    </div>
+                                    <div class="headline-container">
+                                        <h2>big nice headline</h2>
+                                        <p>very nice paragrah</p>
+                                        <a href="">some nice link</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="link">
-                            <div class="img-container"><img src="" />very nice picture</div>
-                            <div class="headline-container">
-                                <h2>big nice headline</h2>
-                                <p>very nice paragrah</p>
-                                <a href="">some nice link</a>
+                            <div class="card">
+                                <div class="link">
+                                    <div class="img-container">
+                                        <img src="./photos/nice-pic.jpg" very nice picture />
+                                    </div>
+                                    <div class="headline-container">
+                                        <h2>big nice headline</h2>
+                                        <p>very nice paragrah</p>
+                                        <a href="">some nice link</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
