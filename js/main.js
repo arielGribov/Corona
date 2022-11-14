@@ -7,6 +7,10 @@ const cards = document.getElementsByClassName('card');
 const cardsContainers = document.getElementsByClassName('cards-container');
 const menuButtons = document.getElementsByClassName('fa-ellipsis-vertical');
 const menuDivs = document.getElementsByClassName('menu');
+const dropdownButtons = document.getElementsByClassName('dropdown-button');
+const panels = document.getElementsByClassName('panel');
+const angleDowns = document.getElementsByClassName('fa-angle-down');
+const angleUps = document.getElementsByClassName('fa-angle-up');
 let cardsCounter = 0;
 
 hamburgerButton.onclick = () => {
@@ -39,9 +43,17 @@ for (let i = 0; i < menuButtons.length; i++) {
     menuButtons[i].onclick = () => {
         menuDivs[i].classList.toggle('display-none');
         if (!menuDivs[i].classList.contains('display-none')) {
-            menuDivs[i].onmouseout = () => {
+            menuDivs[i].onmouseout = (event) => {
+                event.stopPropagation();
                 menuDivs[i].classList.add('display-none');
             };
         }
+    };
+}
+for (let i = 0; i < dropdownButtons.length; i++) {
+    dropdownButtons[i].onclick = () => {
+        panels[i].classList.toggle('display-none');
+        angleDowns[i].classList.toggle('display-none');
+        angleUps[i].classList.toggle('display-none');
     };
 }

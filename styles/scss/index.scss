@@ -168,12 +168,136 @@
                             background: white;
                             border-radius: 10px;
                             box-shadow: 3px 6px 14px 3px rgb(0 0 0 / 10%);
-                            height: 184px;
+                            height: fit-content;
+                            min-height: 184px;
                             padding: 16px;
                             .card-title {
-                                display: flex;
-                                justify-content: space-between;
-                                margin-left: 5px;
+                                position: relative;
+                                .legend-container {
+                                    display: flex;
+                                    max-width: 75%;
+                                    position: absolute;
+                                    top: 123%;
+                                    right: 3%;
+                                    z-index: 10;
+                                    padding: 5px;
+                                    .legend-item-container {
+                                        display: flex;
+                                        align-items: center;
+                                        background: white;
+                                        padding-left: 16px;
+
+                                        .small-circle {
+                                            margin-left: 5px;
+                                            min-width: 9px;
+                                            width: 9px;
+                                            height: 9px;
+                                            border-radius: 50%;
+                                        }
+                                        .first-bar-color {
+                                            background: #1c7d7e;
+                                        }
+                                        .second-bar-color {
+                                            background: #b6ca51;
+                                        }
+                                        .third-bar-color {
+                                            background: #50cbfd;
+                                        }
+                                        #orangeDot {
+                                            background-color: rgb(255, 125, 103);
+                                        }
+                                        h4 {
+                                            font-size: 0.8rem;
+                                            font-weight: 400;
+                                        }
+                                    }
+                                }
+                                .search-bar-container {
+                                    padding-top: 15px;
+                                    .dropdown-button {
+                                        display: flex;
+                                        align-items: center;
+                                        border-radius: 10px;
+                                        max-width: 100%;
+                                        min-width: 200px;
+                                        overflow: visible;
+                                        cursor: pointer;
+                                        border: solid 2px #e4e9f2;
+                                        background: #f7f9fc;
+                                        span {
+                                            font-size: 1rem;
+                                            padding: 0 5px;
+                                            border-radius: 10px;
+                                            overflow: hidden;
+                                            white-space: nowrap;
+                                            width: calc(100% - 20px);
+                                            text-align: right;
+                                            text-overflow: ellipsis;
+                                        }
+                                        .angle {
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            opacity: 0.3;
+                                            height: 20px;
+                                            width: 20px;
+                                            color: #222b45;
+                                        }
+                                    }
+                                    .panel {
+                                        position: absolute;
+                                        z-index: 97;
+                                        background: white;
+                                        padding: 0 0 2rem;
+                                        color: #222b45;
+                                        border-radius: 0.5rem;
+                                        border: 1px solid #e4e9f2;
+                                        inset-inline-start: 0;
+                                        min-width: 200px;
+                                        height: auto;
+                                        max-height: 275px;
+                                        .filter {
+                                            .options-wrapper {
+                                                max-height: 240px;
+                                                overflow: auto;
+                                                padding-inline-start: 1rem;
+                                                padding-bottom: 10px;
+                                                h4 {
+                                                    margin: 12px 0 4px;
+                                                    line-height: 2rem;
+                                                }
+                                                ul {
+                                                    list-style-type: none;
+                                                    li {
+                                                        margin-bottom: 0.5rem;
+                                                        input {
+                                                            margin-inline-end: 8px;
+                                                            cursor: pointer;
+                                                            max-width: 297px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            .actions {
+                                                position: absolute;
+                                                z-index: 98;
+                                                bottom: 0;
+                                                width: 100%;
+                                                display: flex;
+                                                border-radius: 0 0 6px 6px;
+                                                overflow: hidden;
+                                                height: 2rem;
+                                                button {
+                                                    color: #222b45;
+                                                    flex: 1;
+                                                    cursor: pointer;
+                                                    border: 0;
+                                                    font-size: inherit;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                                 .right-side-div {
                                     display: flex;
                                     gap: 15px;
@@ -200,7 +324,11 @@
                                     }
                                 }
                                 .left-side-div {
-                                    position: relative;
+                                    position: absolute;
+                                    width: 40px;
+                                    height: 40px;
+                                    top: 0.6rem;
+                                    inset-inline-end: 0;
                                     .fa-ellipsis-vertical {
                                         position: absolute;
                                         top: 0;
@@ -215,6 +343,7 @@
                                         top: 17px;
                                         z-index: 98;
                                         border-radius: 3px;
+                                        background-color: white;
                                         .share,
                                         .download {
                                             display: flex;
@@ -243,6 +372,18 @@
                             .card-body {
                                 display: flex;
                                 flex-wrap: wrap;
+                                height: fit-content;
+                                flex: 1;
+                                overflow: hidden;
+                                position: relative;
+                                #gragh {
+                                    height: 380px;
+                                    flex: 1;
+                                }
+                                .graph {
+                                    min-height: 378px;
+                                    flex: 1;
+                                }
                             }
                         }
                     }
@@ -307,6 +448,7 @@
                             .card {
                                 height: 116px;
                                 padding: 0;
+                                min-height: 0;
                                 .link {
                                     display: flex;
                                     cursor: pointer;

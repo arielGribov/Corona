@@ -4,9 +4,9 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- <script src="./node_modules/echarts/dist/echarts.js"></script> -->
+        <script src="./node_modules/echarts/dist/echarts.js"></script>
         <script src="./js/main.js" defer></script>
-        <script src="./js/charts.js" type="module" defer></script>
+        <script src="./js/chartsData.js" defer></script>
         <link rel="stylesheet" href="./styles/css/index.css" />
         <script src="https://kit.fontawesome.com/507a7da555.js" crossorigin="anonymous"></script>
         <title>קורונה - לוח בקרה</title>
@@ -24,7 +24,7 @@
                     </div>
                     <div class="header-text">
                         <b class="text-headline">נגיף הקורונה בישראל - תמונת מצב כללית</b>
-                        <span class="text-update">עדכון אחרון: 18 בספטמבר 2022 | 08:13</span>
+                        <span class="text-update">עדכון אחרון: 30 בספטמבר 2022 | 08:13</span>
                     </div>
                 </div>
                 <div class="side-buttons-container">
@@ -244,6 +244,79 @@
                                         : קשה (כולל קריטי), בינוני וקל.
                                     </div>
                                 </div>
+                                <div class="search-bar-container">
+                                    <button class="dropdown-button">
+                                        <span>קשה,בינוני,קל, חודש אחרון</span>
+                                        <i class="fa-solid fa-angle-down angle"></i>
+                                        <i class="fa-solid fa-angle-up angle display-none"></i>
+                                    </button>
+                                    <div class="panel display-none">
+                                        <form class="filter">
+                                            <div class="options-wrapper">
+                                                <div>
+                                                    <h4>מצב מאושפזים</h4>
+                                                    <ul>
+                                                        <li>
+                                                            <input type="checkbox" checked />
+                                                            קשה
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" checked />
+                                                            בינוני
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" checked />
+                                                            קל
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h4>זמן</h4>
+                                                    <ul>
+                                                        <li>
+                                                            <input type="radio" name="date" />
+                                                            עד עכשיו
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="date" />
+                                                            שנה
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="date" />
+                                                            6 חודשים
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="date" />
+                                                            3 חודשים
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="date" checked />
+                                                            חודש אחרון
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="actions">
+                                                <button type="submit">אישור</button>
+                                                <button type="button">ביטול</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="legend-container">
+                                    <div class="legend-item-container">
+                                        <div class="small-circle third-bar-color"></div>
+                                        <h4>קשה</h4>
+                                    </div>
+                                    <div class="legend-item-container">
+                                        <div class="small-circle second-bar-color"></div>
+                                        <h4>בינוני</h4>
+                                    </div>
+                                    <div class="legend-item-container">
+                                        <div class="small-circle first-bar-color"></div>
+                                        <h4>קל</h4>
+                                    </div>
+                                </div>
                                 <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
@@ -258,7 +331,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph</div>
+                            <div class="card-body">
+                                <div id="graph1" class="graph"></div>
+                            </div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -276,6 +351,75 @@
                                         "חישוב מקדם ההדבקה R" של מרכז המידע והידע הלאומי למערכה בקורונה.
                                     </div>
                                 </div>
+                                <div class="search-bar-container">
+                                    <button class="dropdown-button">
+                                        <span>כלל המדינות, מספר תושבים שנכנסו, חודש אחרון</span>
+                                        <i class="fa-solid fa-angle-down angle"></i>
+                                        <i class="fa-solid fa-angle-up angle display-none"></i>
+                                    </button>
+                                    <div class="panel display-none">
+                                        <form class="filter">
+                                            <div class="options-wrapper">
+                                                <div>
+                                                    <h4>הצג לפי</h4>
+                                                    <ul>
+                                                        <li>
+                                                            <input type="radio" name="arrivers" checked />
+                                                            מספר תושבים שנכנסו
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="arrivers" />
+                                                            מספר מאומתים שנכנסו
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h4>זמן</h4>
+                                                    <ul>
+                                                        <li>
+                                                            <input type="radio" name="date" />
+                                                            עד עכשיו
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="date" />
+                                                            שנה
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="date" />
+                                                            6 חודשים
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="date" />
+                                                            3 חודשים
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="date" checked />
+                                                            חודש אחרון
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="actions">
+                                                <button type="submit">אישור</button>
+                                                <button type="button">ביטול</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="legend-container">
+                                    <div class="legend-item-container">
+                                        <div class="small-circle third-bar-color"></div>
+                                        <h4>לא מחוסנים</h4>
+                                    </div>
+                                    <div class="legend-item-container">
+                                        <div class="small-circle second-bar-color"></div>
+                                        <h4>מחוסנים ללא תוקף</h4>
+                                    </div>
+                                    <div class="legend-item-container">
+                                        <div class="small-circle first-bar-color"></div>
+                                        <h4>מחוסנים</h4>
+                                    </div>
+                                </div>
                                 <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
@@ -290,7 +434,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph</div>
+                            <div class="card-body">
+                                <div id="graph2" class="graph"></div>
+                            </div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -304,6 +450,63 @@
                                         נפטרו.
                                     </div>
                                 </div>
+                                <div class="search-bar-container">
+                                    <button class="dropdown-button">
+                                        <span>חולים פעילים, ל-100 אלף תושבים</span>
+                                        <i class="fa-solid fa-angle-down angle"></i>
+                                        <i class="fa-solid fa-angle-up angle display-none"></i>
+                                    </button>
+                                    <div class="panel display-none">
+                                        <form class="filter">
+                                            <div class="options-wrapper">
+                                                <div>
+                                                    <h4>משתנה</h4>
+                                                    <ul>
+                                                        <li>
+                                                            <input type="radio" name="sickness" checked />
+                                                            חולים פעילים
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="sickness" />
+                                                            חולים קשה
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h4>זמן</h4>
+                                                    <ul>
+                                                        <li>
+                                                            <input type="radio" name="annallisez" />
+                                                            מספר מוחלט
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="annallisez" checked />
+                                                            ל-100 אלף תושבים
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="actions">
+                                                <button type="submit">אישור</button>
+                                                <button type="button">ביטול</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="legend-container">
+                                    <div class="legend-item-container">
+                                        <div class="small-circle third-bar-color"></div>
+                                        <h4>לא מחוסנים</h4>
+                                    </div>
+                                    <div class="legend-item-container">
+                                        <div class="small-circle second-bar-color"></div>
+                                        <h4>מחוסנים ללא תוקף</h4>
+                                    </div>
+                                    <div class="legend-item-container">
+                                        <div class="small-circle first-bar-color"></div>
+                                        <h4>מחוסנים</h4>
+                                    </div>
+                                </div>
                                 <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
@@ -318,7 +521,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph</div>
+                            <div class="card-body">
+                                <div id="graph3" class="graph"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="simulation-container">
@@ -345,6 +550,58 @@
                                         בכלל המחלקות ובבית חולים מסוים. ניתן לבחור תצוגה עד למשך שנה .
                                     </div>
                                 </div>
+                                <div class="search-bar-container">
+                                    <button class="dropdown-button">
+                                        <span>חודש אחרון</span>
+                                        <i class="fa-solid fa-angle-down angle"></i>
+                                        <i class="fa-solid fa-angle-up angle display-none"></i>
+                                    </button>
+                                    <div class="panel display-none">
+                                        <form class="filter">
+                                            <div class="options-wrapper">
+                                                <div>
+                                                    <h4>זמן</h4>
+                                                    <ul>
+                                                        <li>
+                                                            <input type="radio" name="date" />
+                                                            עד עכשיו
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="date" />
+                                                            שנה
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="date" />
+                                                            6 חודשים
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="date" />
+                                                            3 חודשים
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="date" checked />
+                                                            חודש אחרון
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="actions">
+                                                <button type="submit">אישור</button>
+                                                <button type="button">ביטול</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="legend-container">
+                                    <div class="legend-item-container">
+                                        <div class="small-circle first-bar-color"></div>
+                                        <h4>נפטרים</h4>
+                                    </div>
+                                    <div class="legend-item-container">
+                                        <div id="orangeDot" class="small-circle third-bar-color"></div>
+                                        <h4>ממוצע נע נפטרים</h4>
+                                    </div>
+                                </div>
                                 <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
@@ -359,7 +616,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph</div>
+                            <div class="card-body">
+                                <div id="graph4" class="graph"></div>
+                            </div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -395,7 +654,7 @@
                         <div class="card">
                             <div class="card-title">
                                 <div class="right-side-div">
-                                    <h3>מגמת ילדים מאומתים – ממוצע נע 7 ימים</h3>
+                                    <h3>big nice headline</h3>
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">
                                         המספר היומי הממוצע ב-7 הימים האחרונים של מאומתים עד גיל 19 בחלוקה לפי 4 קבוצות
@@ -418,7 +677,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph</div>
+                            <div class="card-body">
+                                <div class="graph">graph</div>
+                            </div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -441,7 +702,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph very nice</div>
+                            <div class="card-body"><div class="graph">graph</div></div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -464,7 +725,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph very nice</div>
+                            <div class="card-body"><div class="graph">graph</div></div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -487,7 +748,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph very nice</div>
+                            <div class="card-body"><div class="graph">graph</div></div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -510,7 +771,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph very nice</div>
+                            <div class="card-body"><div class="graph">graph</div></div>
                         </div>
                     </div>
                 </section>
@@ -524,6 +785,83 @@
                                     <i class="fa-solid fa-circle-info"></i>
                                     <div class="info display-none">some info very nice</div>
                                 </div>
+                                <div class="search-bar-container">
+                                    <button class="dropdown-button">
+                                        <span>מאומתים, חודש אחרון</span>
+                                        <i class="fa-solid fa-angle-down angle"></i>
+                                        <i class="fa-solid fa-angle-up angle display-none"></i>
+                                    </button>
+                                    <div class="panel display-none">
+                                        <form class="filter">
+                                            <div class="options-wrapper">
+                                                <div>
+                                                    <h4>הצג לפי</h4>
+                                                    <ul>
+                                                        <li>
+                                                            <input type="radio" name="divisions" checked />
+                                                            מאומתים
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="divisions" />
+                                                            נפטרים
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="divisions" />
+                                                            מונשמים
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="divisions" />
+                                                            מצב קשה
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="divisions" />
+                                                            מאושפזים
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h4>זמן</h4>
+                                                    <ul>
+                                                        <li>
+                                                            <input type="radio" name="date" />
+                                                            עד עכשיו
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="date" />
+                                                            שנה
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="date" />
+                                                            6 חודשים
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="date" />
+                                                            3 חודשים
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="date" checked />
+                                                            חודש אחרון
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="actions">
+                                                <button type="submit">אישור</button>
+                                                <button type="button">ביטול</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="legend-container">
+                                    <div class="legend-item-container">
+                                        <div class="small-circle third-bar-color"></div>
+                                        <h4>גברים</h4>
+                                    </div>
+                                    <div class="legend-item-container">
+                                        <div class="small-circle second-bar-color"></div>
+                                        <h4>נשים</h4>
+                                    </div>
+                                </div>
                                 <div class="left-side-div">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                     <div class="menu display-none">
@@ -538,7 +876,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph very nice</div>
+                            <div class="card-body">
+                                <div id="graph5" class="graph"></div>
+                            </div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -561,7 +901,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph very nice</div>
+                            <div class="card-body"><div class="graph">graph</div></div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -652,7 +992,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph very nice</div>
+                            <div class="card-body"><div class="graph">graph</div></div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -675,7 +1015,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph very nice</div>
+                            <div class="card-body"><div class="graph">graph</div></div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -698,7 +1038,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph very nice</div>
+                            <div class="card-body"><div class="graph">graph</div></div>
                         </div>
                     </div>
                 </section>
@@ -725,7 +1065,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph very nice</div>
+                            <div class="card-body"><div class="graph"  >graph</div></div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -747,7 +1087,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph</div>
+                            <div class="card-body"><div class="graph"  >graph</div></div>
                         </div>
                     </div>
                 </section>
@@ -774,7 +1114,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph very nice</div>
+                            <div class="card-body"><div class="graph"  >graph</div></div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -796,7 +1136,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph</div>
+                            <div class="card-body"><div class="graph"  >graph</div></div>
                         </div>
                     </div>
                 </section>    -->
@@ -824,7 +1164,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph very nice</div>
+                            <div class="card-body"><div class="graph">graph</div></div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -847,7 +1187,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph very nice</div>
+                            <div class="card-body"><div class="graph">graph</div></div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -870,7 +1210,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph very nice</div>
+                            <div class="card-body"><div class="graph">graph</div></div>
                         </div>
                     </div>
                     <div class="links-container">
@@ -944,7 +1284,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph very nice</div>
+                            <div class="card-body"><div class="graph">graph</div></div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -967,7 +1307,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph very nice</div>
+                            <div class="card-body"><div class="graph">graph</div></div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -990,7 +1330,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph very nice</div>
+                            <div class="card-body"><div class="graph">graph</div></div>
                         </div>
                         <div class="card">
                             <div class="card-title">
@@ -1104,7 +1444,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">graph very nice</div>
+                            <div class="card-body"><div class="graph">graph</div></div>
                         </div>
                     </div>
                     <div class="links-container">
@@ -1152,3 +1492,1470 @@
         </main>
     </body>
 </html>
+<!-- 
+<bdc-generic-table>
+    <div class="table-body">
+        <div role="grid" class="vs-table">
+            <div role="row" class="vs-row vs-head">
+                <div role="columnheader" class="vs-col vs-col-header">
+                    <button type="button" class="vs-header-change-sort-button">
+                        <div>בית חולים</div>
+                        <div class="sort-icon-container"></div>
+                    </button>
+                </div>
+                <div role="columnheader" class="vs-col vs-col-header">
+                    <button type="button" class="vs-header-change-sort-button">
+                        <div>% תפוסה כללית</div>
+                        <div class="sort-icon-container">
+                            <span>
+                                <bdc-generic-icon iconname="triangle-down" aria-hidden="true" _nghost-dgb-c95="">
+                                    <span class="size-limit">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true"
+                                            role="img"
+                                            width="1em"
+                                            height="1em"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <g fill="currentColor" data-name="Layer 2">
+                                                <g data-name="arrow-downward">
+                                                    <rect
+                                                        width="24"
+                                                        height="24"
+                                                        transform="rotate(-90 12 12)"
+                                                        opacity="0"
+                                                    ></rect>
+                                                    <path
+                                                        d="M12 17a1.72 1.72 0 0 1-1.33-.64l-4.21-5.1a2.1 2.1 0 0 1-.26-2.21A1.76 1.76 0 0 1 7.79 8h8.42a1.76 1.76 0 0 1 1.59 1.05 2.1 2.1 0 0 1-.26 2.21l-4.21 5.1A1.72 1.72 0 0 1 12 17z"
+                                                    ></path>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </bdc-generic-icon>
+                            </span>
+                        </div>
+                    </button>
+                </div>
+                <div role="columnheader" class="vs-col vs-col-header">
+                    <button type="button" class="vs-header-change-sort-button">
+                        <div>% תפוסת מחלקה פנימית</div>
+                        <div class="sort-icon-container"></div>
+                    </button>
+                </div>
+            </div>
+            <cdk-virtual-scroll-viewport
+                tabindex="0"
+                class="cdk-virtual-scroll-viewport scrollable-container vs-container cdk-virtual-scroll-orientation-vertical"
+                style="height: 225px"
+            >
+                <div class="cdk-virtual-scroll-content-wrapper" style="transform: translateY(0px)">
+                    <div class="vs-row" style="height: 50px">
+                        <div class="vs-col cell-container important-column" title="הדסה עין כרם">
+                            <div class="cell-container justify-start cell-container-title">
+                                <span><span class="cell-text-line"> הדסה עין כרם </span> </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220090"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                            cursor: default;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        >
+                                                        </canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </bdc-table-col-chart>
+                                </div>
+                                <span style="margin: auto 4px"> 100.4% </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart>
+                                        <div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220091"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        >
+                                                        </canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </bdc-table-col-chart>
+                                </div>
+                                <span style="margin: auto 4px"> 122.3% </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vs-row" style="height: 50px">
+                        <div class="vs-col cell-container important-column" title="בני ציון">
+                            <div class="cell-container justify-start cell-container-title">
+                                <span class="cell-text-line"> בני ציון </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220092"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                            cursor: default;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 93.1% </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220093"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 100.8% </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vs-row" style="height: 50px">
+                        <div class="vs-col cell-container important-column" title="הלל יפה">
+                            <div class="cell-container justify-start cell-container-title">
+                                <span><span class="cell-text-line"> הלל יפה </span> </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart>
+                                        <div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220094"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </bdc-table-col-chart>
+                                </div>
+                                <span style="margin: auto 4px"> 92.4% </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart>
+                                        <div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220095"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </bdc-table-col-chart>
+                                </div>
+                                <span style="margin: auto 4px"> 100% </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vs-row" style="height: 50px">
+                        <div class="vs-col cell-container important-column" title="נהריה">
+                            <div class="cell-container justify-start cell-container-title">
+                                <span><span class="cell-text-line"> נהריה </span> </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220096"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 91.7% </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220097"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 113.2% </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vs-row" style="height: 50px">
+                        <div class="vs-col cell-container important-column" title="לניאדו">
+                            <div class="cell-container justify-start cell-container-title">
+                                <span><span class="cell-text-line"> לניאדו </span> </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220098"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 90.6% </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220099"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 96.2% </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vs-row" style="height: 50px">
+                        <div class="vs-col cell-container important-column" title='רמב"ם'>
+                            <div class="cell-container justify-start cell-container-title">
+                                <span><span class="cell-text-line"> רמב"ם </span> </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220100"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 87.3% </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220101"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 103% </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vs-row" style="height: 50px">
+                        <div class="vs-col cell-container important-column" title="ברזילי">
+                            <div class="cell-container justify-start cell-container-title">
+                                <span><span class="cell-text-line"> ברזילי </span> </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220102"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 81.5% </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220103"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 95.8% </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vs-row" style="height: 50px">
+                        <div class="vs-col cell-container important-column" title="הדסה הר הצופים">
+                            <div class="cell-container justify-start cell-container-title">
+                                <span><span class="cell-text-line"> הדסה הר הצופים </span> </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220104"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 79.9% </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220105"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 91.7% </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vs-row" style="height: 50px">
+                        <div class="vs-col cell-container important-column" title="וולפסון">
+                            <div class="cell-container justify-start cell-container-title">
+                                <span><span class="cell-text-line"> וולפסון </span> </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220106"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 75.8% </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220107"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 78.3% </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vs-row" style="height: 50px">
+                        <div class="vs-col cell-container important-column" title="זיו צפת">
+                            <div class="cell-container justify-start cell-container-title">
+                                <span><span class="cell-text-line"> זיו צפת </span> </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220108"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 75.8% </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220109"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 90.6% </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vs-row" style="height: 50px">
+                        <div class="vs-col cell-container important-column" title="פוריה">
+                            <div class="cell-container justify-start cell-container-title">
+                                <span><span class="cell-text-line"> פוריה </span> </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220110"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 71% </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220111"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 84.6% </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vs-row" style="height: 50px">
+                        <div class="vs-col cell-container important-column" title="שמיר">
+                            <div class="cell-container justify-start cell-container-title">
+                                <span><span class="cell-text-line"> שמיר </span> </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220112"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 69.8% </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before">
+                                    <bdc-table-col-chart
+                                        ><div class="row">
+                                            <div class="col-4 col-sm-6">
+                                                <div
+                                                    echarts=""
+                                                    class="chart-container percent"
+                                                    _echarts_instance_="ec_1668436220113"
+                                                    style="
+                                                        height: 50px;
+                                                        -webkit-tap-highlight-color: transparent;
+                                                        user-select: none;
+                                                    "
+                                                >
+                                                    <div
+                                                        style="
+                                                            position: relative;
+                                                            width: 38px;
+                                                            height: 50px;
+                                                            padding: 0px;
+                                                            margin: 0px;
+                                                            border-width: 0px;
+                                                        "
+                                                    >
+                                                        <canvas
+                                                            data-zr-dom-id="zr_0"
+                                                            width="38"
+                                                            height="50"
+                                                            style="
+                                                                position: absolute;
+                                                                left: 0px;
+                                                                top: 0px;
+                                                                width: 38px;
+                                                                height: 50px;
+                                                                user-select: none;
+                                                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                                padding: 0px;
+                                                                margin: 0px;
+                                                                border-width: 0px;
+                                                            "
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div></div
+                                    ></bdc-table-col-chart>
+                                </div>
+                                <span>
+                                    <span style="margin: auto 4px"> 80.3% </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vs-row" style="height: 50px">
+                        <div class="vs-col cell-container important-column" title="אוגוסטה ויקטוריה">
+                            <div class="cell-container justify-start cell-container-title">
+                                <span><span class="cell-text-line"> אוגוסטה ויקטוריה </span> </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before"></div>
+                                <span>
+                                    <span style="margin: auto 4px"> אין מידע </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before"></div>
+                                <span>
+                                    <span style="margin: auto 4px"> אין מידע </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vs-row" style="height: 50px">
+                        <div class="vs-col cell-container important-column" title="איכילוב">
+                            <div class="cell-container justify-start cell-container-title">
+                                <span><span class="cell-text-line"> איכילוב </span> </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before"></div>
+                                <span>
+                                    <span style="margin: auto 4px"> אין מידע </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="vs-col cell-container important-column" title="">
+                            <div class="cell-container col-chart justify-start">
+                                <div class="show-visual-before"></div>
+                                <span>
+                                    <span style="margin: auto 4px"> אין מידע </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cdk-virtual-scroll-spacer" style="height: 1600px"></div
+            ></cdk-virtual-scroll-viewport>
+        </div>
+    </div>
+</bdc-generic-table> -->

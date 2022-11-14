@@ -11,6 +11,7 @@
     "license": "ISC",
     "dependencies": {
         "echarts": "^5.3.3",
+        "jsdom-quokka-plugin": "^1.0.16",
         "nodemon": "^2.0.20",
         "sass": "^1.54.9"
     }

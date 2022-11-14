@@ -170,13 +170,134 @@
   background: white;
   border-radius: 10px;
   box-shadow: 3px 6px 14px 3px rgba(0, 0, 0, 0.1);
-  height: 184px;
+  height: fit-content;
+  min-height: 184px;
   padding: 16px;
 }
 * body main .main-container section .cards-container .card .card-title {
+  position: relative;
+}
+* body main .main-container section .cards-container .card .card-title .legend-container {
   display: flex;
-  justify-content: space-between;
+  max-width: 75%;
+  position: absolute;
+  top: 123%;
+  right: 3%;
+  z-index: 10;
+  padding: 5px;
+}
+* body main .main-container section .cards-container .card .card-title .legend-container .legend-item-container {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding-left: 16px;
+}
+* body main .main-container section .cards-container .card .card-title .legend-container .legend-item-container .small-circle {
   margin-left: 5px;
+  min-width: 9px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+* body main .main-container section .cards-container .card .card-title .legend-container .legend-item-container .first-bar-color {
+  background: #1c7d7e;
+}
+* body main .main-container section .cards-container .card .card-title .legend-container .legend-item-container .second-bar-color {
+  background: #b6ca51;
+}
+* body main .main-container section .cards-container .card .card-title .legend-container .legend-item-container .third-bar-color {
+  background: #50cbfd;
+}
+* body main .main-container section .cards-container .card .card-title .legend-container .legend-item-container #orangeDot {
+  background-color: rgb(255, 125, 103);
+}
+* body main .main-container section .cards-container .card .card-title .legend-container .legend-item-container h4 {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+* body main .main-container section .cards-container .card .card-title .search-bar-container {
+  padding-top: 15px;
+}
+* body main .main-container section .cards-container .card .card-title .search-bar-container .dropdown-button {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  max-width: 100%;
+  min-width: 200px;
+  overflow: visible;
+  cursor: pointer;
+  border: solid 2px #e4e9f2;
+  background: #f7f9fc;
+}
+* body main .main-container section .cards-container .card .card-title .search-bar-container .dropdown-button span {
+  font-size: 1rem;
+  padding: 0 5px;
+  border-radius: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: calc(100% - 20px);
+  text-align: right;
+  text-overflow: ellipsis;
+}
+* body main .main-container section .cards-container .card .card-title .search-bar-container .dropdown-button .angle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.3;
+  height: 20px;
+  width: 20px;
+  color: #222b45;
+}
+* body main .main-container section .cards-container .card .card-title .search-bar-container .panel {
+  position: absolute;
+  z-index: 97;
+  background: white;
+  padding: 0 0 2rem;
+  color: #222b45;
+  border-radius: 0.5rem;
+  border: 1px solid #e4e9f2;
+  inset-inline-start: 0;
+  min-width: 200px;
+  height: auto;
+  max-height: 275px;
+}
+* body main .main-container section .cards-container .card .card-title .search-bar-container .panel .filter .options-wrapper {
+  max-height: 240px;
+  overflow: auto;
+  padding-inline-start: 1rem;
+  padding-bottom: 10px;
+}
+* body main .main-container section .cards-container .card .card-title .search-bar-container .panel .filter .options-wrapper h4 {
+  margin: 12px 0 4px;
+  line-height: 2rem;
+}
+* body main .main-container section .cards-container .card .card-title .search-bar-container .panel .filter .options-wrapper ul {
+  list-style-type: none;
+}
+* body main .main-container section .cards-container .card .card-title .search-bar-container .panel .filter .options-wrapper ul li {
+  margin-bottom: 0.5rem;
+}
+* body main .main-container section .cards-container .card .card-title .search-bar-container .panel .filter .options-wrapper ul li input {
+  margin-inline-end: 8px;
+  cursor: pointer;
+  max-width: 297px;
+}
+* body main .main-container section .cards-container .card .card-title .search-bar-container .panel .filter .actions {
+  position: absolute;
+  z-index: 98;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  border-radius: 0 0 6px 6px;
+  overflow: hidden;
+  height: 2rem;
+}
+* body main .main-container section .cards-container .card .card-title .search-bar-container .panel .filter .actions button {
+  color: #222b45;
+  flex: 1;
+  cursor: pointer;
+  border: 0;
+  font-size: inherit;
 }
 * body main .main-container section .cards-container .card .card-title .right-side-div {
   display: flex;
@@ -204,7 +325,11 @@
   width: 140px;
 }
 * body main .main-container section .cards-container .card .card-title .left-side-div {
-  position: relative;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 0.6rem;
+  inset-inline-end: 0;
 }
 * body main .main-container section .cards-container .card .card-title .left-side-div .fa-ellipsis-vertical {
   position: absolute;
@@ -220,6 +345,7 @@
   top: 17px;
   z-index: 98;
   border-radius: 3px;
+  background-color: white;
 }
 * body main .main-container section .cards-container .card .card-title .left-side-div .menu .share,
 * body main .main-container section .cards-container .card .card-title .left-side-div .menu .download {
@@ -248,6 +374,18 @@
 * body main .main-container section .cards-container .card .card-body {
   display: flex;
   flex-wrap: wrap;
+  height: fit-content;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+* body main .main-container section .cards-container .card .card-body #gragh {
+  height: 380px;
+  flex: 1;
+}
+* body main .main-container section .cards-container .card .card-body .graph {
+  min-height: 378px;
+  flex: 1;
 }
 * body main .main-container section .last-7-days {
   background-color: white;
@@ -312,6 +450,7 @@
 * body main .main-container section .links-container .cards-container .card {
   height: 116px;
   padding: 0;
+  min-height: 0;
 }
 * body main .main-container section .links-container .cards-container .card .link {
   display: flex;
