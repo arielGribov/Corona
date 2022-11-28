@@ -7,42 +7,36 @@ let valueBase3 = Math.random() * 100;
 let data = [];
 let data2 = [];
 let data3 = [];
+let theme = isDarkModeOn ? 'dark' : 'light';
+
 for (let i = 1; i < 50; i++) {
     valueBase = Math.round((Math.random() - 0.5) * 20 + valueBase);
     valueBase <= 0 && (valueBase = Math.random() * 300);
-    data.push(valueBase);
+    data.push(Math.round(valueBase));
     valueBase2 = Math.round((Math.random() - 0.5) * 20 + valueBase2);
     valueBase2 <= 0 && (valueBase2 = Math.random() * 50);
-    data2.push(valueBase2);
+    data2.push(Math.round(valueBase2));
     valueBase3 = Math.round((Math.random() - 0.5) * 20 + valueBase3);
     valueBase3 <= 0 && (valueBase3 = Math.random() * 100);
-    data3.push(valueBase3);
+    data3.push(Math.round(valueBase3));
 }
+
 for (let i = 0; i < 45; i++) {
     const date = new Date(startDay.getFullYear(), startDay.getMonth(), startDay.getDate() + i);
     monthArr[i] = [date.getDate(), date.getMonth() + 1].join('.');
 }
-
-const myChart1 = echarts.init(document.getElementById('graph1'));
+const myChart1 = echarts.init(document.getElementById('graph1'), theme);
 const option1 = {
     color: ['#50cbfd', '#b6ca51', '#1c7d7e'],
-
     tooltip: {
         trigger: 'axis',
     },
-
-    //?
-
-    // legend: {
-    //     data: ['קשה', 'בינוני', 'קל'],
-    // },
     grid: {
         left: '3%',
         right: '4%',
         bottom: '10%',
         containLabel: true,
     },
-
     xAxis: {
         type: 'category',
         name: 'תאריך',
@@ -86,11 +80,10 @@ const option1 = {
         },
     ],
 };
-
 myChart1.setOption(option1);
 window.addEventListener('resize', myChart1.resize);
 
-const myChart2 = echarts.init(document.getElementById('graph2'));
+const myChart2 = echarts.init(document.getElementById('graph2'), theme);
 const option2 = {
     color: ['#50cbfd', '#b6ca51', '#1c7d7e'],
     tooltip: {
@@ -139,11 +132,10 @@ const option2 = {
         },
     ],
 };
-
 myChart2.setOption(option2);
 window.addEventListener('resize', myChart2.resize);
 
-const myChart3 = echarts.init(document.getElementById('graph3'));
+const myChart3 = echarts.init(document.getElementById('graph3'), theme);
 const option3 = {
     color: ['#50cbfd', '#b6ca51', '#1c7d7e'],
     tooltip: {
@@ -198,11 +190,10 @@ const option3 = {
         },
     ],
 };
-
 myChart3.setOption(option3);
 window.addEventListener('resize', myChart3.resize);
 
-const myChart4 = echarts.init(document.getElementById('graph4'));
+const myChart4 = echarts.init(document.getElementById('graph4'), theme);
 const option4 = {
     color: ['#1c7d7e', '#ff7d67'],
     tooltip: {
@@ -246,11 +237,10 @@ const option4 = {
         },
     ],
 };
-
 myChart4.setOption(option4);
 window.addEventListener('resize', myChart4.resize);
 
-const myChart5 = echarts.init(document.getElementById('graph5'));
+const myChart5 = echarts.init(document.getElementById('graph5'), theme);
 const option5 = {
     color: ['#50cbfd', '#b6ca51'],
     tooltip: {
@@ -302,13 +292,7 @@ const option5 = {
             axisTick: {
                 show: false,
             },
-            // nameTextStyle: {
-            //     align: 'right',
-            //     borderColor: 'red',
-            //     boderWidth: 1,
-            //     borderType: 'solid',
-            //     padding: 0,
-            // },
+
             nameGap: 5,
             data: ['0-9', '9-19', '20-29', '30-39', '40-49', '50-59', '60-69', '70-79', '80-89', '90+'],
         },
@@ -322,6 +306,9 @@ const option5 = {
             label: {
                 show: true,
                 position: 'right',
+                formatter: function (value) {
+                    return value.value + '%';
+                },
             },
             data: [3.2, 55, 3.4, 3.7, 22.9, 4.5, 4.2, 18.1, 6.66, 10],
         },
@@ -333,14 +320,12 @@ const option5 = {
                 show: true,
                 position: 'left',
                 formatter: function (value) {
-                    return Math.abs(parseFloat(value.value));
+                    return Math.abs(parseFloat(value.value)) + '%';
                 },
             },
             data: [-16.2, -11.3, -8, -15.3, -1.9, -2.3, -17.1, -5.89, -21.9, -1.11],
         },
     ],
 };
-
 myChart5.setOption(option5);
-
 window.addEventListener('resize', myChart5.resize);
