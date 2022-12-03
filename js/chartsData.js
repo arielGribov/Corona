@@ -20,11 +20,11 @@ for (let i = 1; i < 50; i++) {
     valueBase3 <= 0 && (valueBase3 = Math.random() * 100);
     data3.push(Math.round(valueBase3));
 }
-
 for (let i = 0; i < 45; i++) {
     const date = new Date(startDay.getFullYear(), startDay.getMonth(), startDay.getDate() + i);
     monthArr[i] = [date.getDate(), date.getMonth() + 1].join('.');
 }
+
 const myChart1 = echarts.init(document.getElementById('graph1'), theme);
 const option1 = {
     color: ['#50cbfd', '#b6ca51', '#1c7d7e'],

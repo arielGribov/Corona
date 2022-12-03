@@ -7,7 +7,6 @@
     --fourth-bg-color: #f7f9fc;
     --input-border-color: #e4e9f2;
 }
-
 html.dark-mode {
     --main-bg-color: #486579;
     --main-color: #ffffff;
@@ -33,9 +32,17 @@ html.dark-mode {
     .display-none {
         display: none !important;
     }
-
     i {
         font-style: unset;
+    }
+    .white-background {
+        background-color: rgba(255, 255, 255, 0.2) !important;
+        border-radius: 20px;
+        padding: 6px 15px;
+        font-weight: 700;
+    }
+    .red {
+        background-color: red !important;
     }
     body {
         width: 100%;
@@ -135,7 +142,6 @@ html.dark-mode {
                 color: #ffffff;
                 overflow: auto;
                 margin-left: 25px;
-
                 ul {
                     display: flex;
                     justify-content: space-between;
@@ -166,7 +172,6 @@ html.dark-mode {
             background-color: var(--main-bg-color);
             padding: 0.25rem 2.25rem 2.25rem;
             margin-top: 135px;
-
             .main-container {
                 display: flex;
                 flex-direction: column;
@@ -200,9 +205,9 @@ html.dark-mode {
                             box-shadow: 3px 6px 14px 3px rgb(0 0 0 / 10%);
                             height: fit-content;
                             min-height: 184px;
-                            padding: 16px;
                             .card-title {
                                 position: relative;
+                                padding: 16px;
                                 .legend-container {
                                     display: flex;
                                     max-width: 75%;
@@ -216,7 +221,6 @@ html.dark-mode {
                                         align-items: center;
                                         background: var(--secondary-bg-color);
                                         padding-left: 16px;
-
                                         .small-circle {
                                             margin-left: 5px;
                                             min-width: 9px;
@@ -362,8 +366,8 @@ html.dark-mode {
                                     inset-inline-end: 0;
                                     .fa-ellipsis-vertical {
                                         position: absolute;
-                                        top: 0;
-                                        left: 0;
+                                        top: 16px;
+                                        left: 16px;
                                         cursor: pointer;
                                     }
                                     .menu {
@@ -407,13 +411,122 @@ html.dark-mode {
                                 flex: 1;
                                 overflow: hidden;
                                 position: relative;
-                                #gragh {
-                                    height: 380px;
-                                    flex: 1;
-                                }
+                                width: 100%;
                                 .graph {
                                     min-height: 378px;
                                     flex: 1;
+                                }
+                                .table {
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 100%;
+                                    border-collapse: collapse;
+                                    white-space: normal;
+                                    .table-headline {
+                                        display: flex;
+                                        flex-direction: row;
+                                        height: auto;
+                                        padding-inline-start: 7px;
+                                        background: #e6f1f3;
+                                        .cell {
+                                            display: flex;
+                                            flex-direction: row;
+                                            flex-grow: 1;
+                                            flex-basis: 30px;
+                                            min-height: 36px;
+                                            -webkit-padding-start: 2px;
+                                            padding-inline-start: 2px;
+                                            width: 150px;
+                                            -webkit-padding-start: 5px;
+                                            padding-inline-start: 5px;
+                                            font-size: 14px;
+                                            text-overflow: ellipsis;
+                                            border: none;
+                                            font-weight: 400;
+                                            border: 0;
+                                            background: #e6f1f3;
+                                            white-space: normal;
+
+                                            button {
+                                                background: #00000000;
+                                                border: none;
+                                                padding: 0 5px;
+                                                color: inherit;
+                                                font-size: inherit;
+                                                font-weight: inherit;
+                                                font-family: inherit;
+                                                line-height: inherit;
+                                                display: flex;
+                                                align-items: center;
+                                                text-align: center;
+                                                cursor: pointer;
+                                                text-transform: none;
+                                                overflow: visible;
+                                                border-radius: 0;
+                                                i {
+                                                    height: 20px;
+                                                    color: #308bf6;
+                                                    max-width: 1.2em;
+                                                    max-height: 1.2em;
+                                                    display: inline-block;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .big-container {
+                                        height: 378px;
+                                        width: 100%;
+                                        max-width: 100%;
+                                        margin: 0 auto;
+                                        display: block;
+                                        overflow-x: hidden !important;
+                                        position: relative;
+                                        overflow: auto;
+                                        contain: strict;
+                                        transform: translateZ(0);
+                                        will-change: scroll-position;
+                                        direction: ltr;
+                                        .lines-container {
+                                            transform: translateY(0px);
+                                            min-width: 100%;
+                                            right: 0;
+                                            position: absolute;
+                                            left: auto;
+                                            top: 0;
+                                            .line {
+                                                display: flex;
+                                                flex-direction: row;
+                                                height: 50px;
+                                                border-bottom: 1px solid #daeaee;
+                                                .cell {
+                                                    display: flex;
+                                                    flex-direction: row;
+                                                    flex-basis: 30px;
+                                                    padding-inline-start: 5px;
+                                                    font-size: 14px;
+                                                    text-overflow: ellipsis;
+                                                    padding: 0;
+                                                    border: none;
+                                                    font-weight: 700;
+                                                    justify-content: start;
+                                                    align-items: center;
+                                                    flex-grow: 1;
+                                                    word-break: break-word;
+                                                    line-height: 14px;
+                                                    margin: auto 4px;
+                                                    div {
+                                                        display: flex;
+                                                        flex-wrap: wrap;
+                                                        height: 11px;
+                                                        width: 38px;
+                                                        margin-inline-end: 5px;
+                                                        position: relative;
+                                                        background-color: rgb(80, 203, 253);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -518,12 +631,7 @@ html.dark-mode {
         }
     }
 }
-.white-background {
-    background-color: rgba(255, 255, 255, 0.2) !important;
-    border-radius: 20px;
-    padding: 6px 15px;
-    font-weight: 700;
-}
+
 @media (max-width: 768px) {
     .card {
         width: 100% !important;

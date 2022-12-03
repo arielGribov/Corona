@@ -47,8 +47,13 @@ for (let i = 0; i < infoSymbol.length; i++) {
 }
 for (let i = 0; i < cardsContainers.length; i++) {
     for (let j = 0; j < cardsContainers[i].children.length; j++) {
-        if (cardsContainers[i].contains(cards[cardsCounter])) {
-            cards[cardsCounter].style.width = `calc((100% /${cardsContainers[i].children.length}) - 20px)`;
+        if (i == 0 || i == 1) {
+            if (cardsContainers[i].contains(cards[cardsCounter])) {
+                cards[cardsCounter].style.width = `calc((100% /${cardsContainers[i].children.length}) - 20px)`;
+                cardsCounter++;
+            }
+        } else if (cardsContainers[i].contains(cards[cardsCounter])) {
+            cards[cardsCounter].style.width = `calc((100% /3) - 20px)`;
             cardsCounter++;
         }
     }

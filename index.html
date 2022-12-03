@@ -8,6 +8,7 @@
         <script src="./js/main.js" defer></script>
         <script src="./js/chartsData.js" defer></script>
         <script src="./js/filters.js" defer></script>
+        <script src="./js/scrollBarSearch.js" defer></script>
         <link rel="stylesheet" href="./styles/css/index.css" />
         <script src="https://kit.fontawesome.com/507a7da555.js" crossorigin="anonymous"></script>
         <title>קורונה - לוח בקרה</title>
@@ -688,7 +689,463 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">scroll bar search</div>
+                            <div class="card-body">
+                                <div class="table">
+                                    <div class="table-headline">
+                                        <div class="cell">
+                                            <button class="sort-button">
+                                                <div>בית חולים</div>
+                                                <div>
+                                                    <i class="fa-solid fa-caret-down display-none"></i>
+                                                    <i class="fa-solid fa-caret-up display-none"></i>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div class="cell">
+                                            <button class="sort-button">
+                                                <div>% תפוסה כללית</div>
+                                                <div>
+                                                    <i class="fa-solid fa-caret-down display-none"></i>
+                                                    <i class="fa-solid fa-caret-up display-none"></i>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div class="cell">
+                                            <button class="sort-button">
+                                                <div>% תפוסה מחלקה פנימי</div>
+                                                <div>
+                                                    <i class="fa-solid fa-caret-down display-none"></i>
+                                                    <i class="fa-solid fa-caret-up display-none"></i>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="big-container">
+                                        <div class="lines-container">
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="line">
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class='inner-div'></div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
