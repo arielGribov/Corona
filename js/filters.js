@@ -37,14 +37,14 @@ const filterChart1 = () => {
         let monthArrTemp = [...monthArr];
         let i = 0;
         let howMuchDays;
+        let allData = [data, data2, data3];
         for (let key in conditionsChart1) {
             result[i++] = conditionsChart1[key];
         }
         for (i = 0; i < result.length; i++) {
-            if (result[i]) {
-                updateOption(option1, [data, data2, data3]);
-            } else option1.series[i].data = null;
+            if (!result[i]) allData[i] = null;
         }
+        updateOption(option1, allData);
         for (let key in timeOfConditionsChart1) {
             if (timeOfConditionsChart1[key]) howMuchDays = key;
         }
@@ -221,7 +221,7 @@ const filterChart5 = () => {
 };
 const divideValueBy = (data, divider, toRound) => {
     let result = [];
-    for (let i = 0; i < data.length; i++) {
+    for (let i = 0; i < data?.length; i++) {
         if (toRound) result[i] = Math.round(data[i] / divider);
         else result[i] = (data[i] / divider).toFixed(2);
     }

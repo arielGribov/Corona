@@ -35,6 +35,9 @@ html.dark-mode {
 * .display-none {
   display: none !important;
 }
+* .height-zero {
+  height: 0 !important;
+}
 * i {
   font-style: unset;
 }
@@ -122,23 +125,71 @@ html.dark-mode {
   cursor: pointer;
 }
 * body header .side-bar {
-  z-index: 3000;
-  transition: 0.5s;
+  --sidenav-absolute-top: 77px;
+  display: block;
+  inset-inline-start: 0;
+  animation-name: backgroundFadeIn;
+  animation-duration: 0.25s;
+  background-color: rgba(239, 245, 249, 0.93);
+  position: fixed;
+  top: var(--sidenav-absolute-top);
+  height: calc(100vh - var(--sidenav-absolute-top));
+  width: 0;
+  z-index: 9999;
+  --sidenav-items-padding-right: 20px;
+  --sidenav-items-children-padding-right: 50px;
+  --sidenav-content-width: 278px;
+  --sidenav-closed-right: calc(0px - var(--sidenav-content-width));
+  --sidenav-closed-background-color: rgba(239, 245, 249, 0);
+  --sidenav-opened-background-color: rgba(239, 245, 249, 0.93);
 }
 * body header .side-bar .nav-container {
-  display: flex;
-}
-* body header .side-bar .nav-container ul {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  list-style: none;
+  width: 0;
+  inset-inline-start: 0;
+  position: absolute;
+  background: #fff;
+  box-shadow: 0 -10px 50px 0 hsla(0deg, 0%, 69%, 0.5);
+  overflow-y: auto;
+  height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+  z-index: 10;
+  transition: width 0.75s ease-out;
 }
 * body header .side-bar .nav-container ul li {
-  color: #222b45;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-top: 1px solid #d8dde0;
+  width: 100%;
+  height: fit-content;
+  padding-inline-start: var(--sidenav-items-padding-right);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
 }
-* body header .side-bar .nav-container ul li div {
-  white-space: nowrap;
+* body header .side-bar .nav-container ul li .menu-title {
+  display: flex;
+  padding: 1px 20px 15px 6px;
+}
+* body header .side-bar .nav-container ul li .menu-title span {
+  min-width: 110px;
+  text-align: initial;
+}
+* body header .side-bar .nav-container ul li .menu-items-container {
+  height: 200px;
+  transition: height 0.25s ease-out;
+}
+* body header .side-bar .nav-container ul li .menu-items-container .menu-item {
+  height: 50px;
+  font-weight: 400;
+}
+* body header .side-bar .open-tab {
+  width: var(--sidenav-content-width);
+}
+* body header .open-side-bar {
+  width: 100vw;
 }
 * body header .scroll-bar {
   background-color: #374f60;
